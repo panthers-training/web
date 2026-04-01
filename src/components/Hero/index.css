@@ -1,0 +1,5 @@
+section[data-section="hero"] {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url('./hero_2.png');
+}

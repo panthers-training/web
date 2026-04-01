@@ -1,9 +1,18 @@
-<section class="min-h-dvh px-8 py-16 max-w-360 mx-auto grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2">
-    <figure class="h-100">
+---
+import './index.css';
+---
+
+<section data-section="hero" class="h-dvh">
+  <div class="max-w-360 px-8 h-full py-16 mx-auto grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 items-center">
+    <figure data-section="hero-logo" class="-mt-48">
       <img class="max-h-full max-w-full" src="/panthers.training-4k-transparent-logo.png"/>
       <figcaption class="text-sm text-end mt-2">by Carlos Ramirez</figcaption>
     </figure>
-    <h1 class="text-5xl lg:text-7xl font-normal italic justify-center text-end self-end">
+    <button class="bg-accent text-black rounded-sm max-w-3xs text-xl p-4 justify-self-end hover:bg-accent/90 transition-colors duration-200 cursor-pointer">
+      Ir al siguiente nivel
+    </button>
+    <!-- <h1 class="text-5xl lg:text-7xl font-normal italic justify-center text-end">
       ¿Listo para llevar tu físico al siguiente nivel?
-    </h1>
+    </h1> -->
+  </div>
 </section>

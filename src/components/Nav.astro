@@ -1,0 +1,60 @@
+<nav id="main-nav" class="nav-container bg-black/80 fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+	<div class="text-white px-6 py-4 flex justify-between">
+		<a href="/" class="flex items-center gap-3 group">
+			
+		</a>
+
+		<!-- Navigation Links -->
+		<div class="flex items-center gap-8">
+			<a
+				href="#contact"
+				class="nav-link relative px-4 py-2 text-sm font-medium text-slate-200 transition-colors duration-200 hover:text-white"
+			>
+				Contacto
+				<span class="nav-link-underline absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-black to-accent scale-x-0 transition-transform duration-300"></span>
+			</a>
+		</div>
+	</div>
+</nav>
+
+<script>
+	const nav = document.getElementById('main-nav');
+
+	function handleScroll() {
+		if (window.scrollY > 0) {
+			nav?.classList.add('scrolled');
+		} else {
+			nav?.classList.remove('scrolled');
+		}
+	}
+
+	// Initial check
+	handleScroll();
+
+	// Listen for scroll events
+	window.addEventListener('scroll', handleScroll, { passive: true });
+</script>
+
+<style>
+	.nav-container {
+		background-color: transparent;
+		border-bottom: 1px solid transparent;
+	}
+
+	.nav-container.scrolled {
+		background-color: rgba(0, 0, 0, 0.8);
+		border-bottom-color: var(--color-accent);
+	}
+
+
+	@media (width >= 1024px) {
+		.nav-link:hover .nav-link-underline {
+			scale: 1;
+		}
+	}
+
+	/* Smooth scroll behavior for anchor links */
+	:global(html) {
+		scroll-behavior: smooth;
+	}
+</style>
