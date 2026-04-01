@@ -5,7 +5,7 @@ import './index.css';
 <section data-section="hero" class="h-dvh">
   <div class="max-w-360 px-8 h-full py-16 mx-auto grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 items-center">
     <figure data-section="hero-logo" class="-mt-20">
-      <img class="max-h-full max-w-full" src="/panthers.training-4k-transparent-logo.png"/>
+      <img class="max-h-full max-w-full" src={import.meta.env.PUBLIC_PATH_URL + "/panthers.training-4k-transparent-logo.png"}/>
       <figcaption class="text-sm text-end mt-2">by Carlos Ramirez</figcaption>
     </figure>
     <button class="cursor-pointer transition-colors duration-200 hover:shadow-md mt-24 bg-black text-accent border border-accent rounded-sm max-w-3xs text-xl p-4 justify-self-center lg:justify-self-end hover:bg-accent hover:text-black">

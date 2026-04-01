@@ -3,7 +3,7 @@ section[data-section="brief"] {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 50%;
-  background-image: url('./brayan_1.jpg');
+  background-image: url('/brayan_1.jpg');
 }
 
 
