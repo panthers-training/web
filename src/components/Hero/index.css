@@ -1,5 +1,17 @@
 section[data-section="hero"] {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: url('./hero_2.png');
+}
+
+section[data-section="hero"]::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30%;
+  background: linear-gradient(to bottom, transparent, var(--color-true-black));
+  pointer-events: none;
 }
