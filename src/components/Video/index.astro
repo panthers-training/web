@@ -1,0 +1,15 @@
+---
+interface Props {
+  src: string;
+}
+
+const { src } = Astro.props;
+---
+
+<script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video-minimal.js"></script>
+
+<video-player>
+  <video-minimal-skin>
+    <video class="aspect-auto md:aspect-video" src={src} playsinline></video>
+  </video-minimal-skin>
+</video-player>
