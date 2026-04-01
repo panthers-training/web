@@ -8,5 +8,5 @@ import Video from '../Video/index.astro';
     <span class="text-2xl xl:3xl">Si lo que buscas es reformar y hacer las pases contigo en varios frentes...</span>
     <span class="text-2xl xl:3xl">Nosotros te cubrimos.</span>
   </p>
-  <Video src={import.meta.env.PUBLIC_PATH_URL + "/nutrifit-collab.mp4"}/>
+  <Video class='aspect-auto md:aspect-video' src={import.meta.env.PUBLIC_PATH_URL + "/nutrifit-collab.mp4"} inline minimal/>
 </section>

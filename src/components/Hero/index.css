@@ -1,8 +1,8 @@
 section[data-section="hero"] {
   position: relative;
-  background-size: cover;
+  /* background-size: cover;
   background-repeat: no-repeat;
-  background-image: url('/hero_2.png');
+  background-image: url('/hero_2.png'); */
 }
 
 section[data-section="hero"]::before {

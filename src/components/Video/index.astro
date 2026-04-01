@@ -1,15 +1,25 @@
 ---
 interface Props {
   src: string;
+  class?: string;
+  inline?: boolean;
+  setup?: Record<string, any>;
+  minimal?: boolean;
 }
 
-const { src } = Astro.props;
+const { src, class: className, setup = {}, minimal = false, inline = false } = Astro.props;
 ---
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video-minimal.js"></script>
 
 <video-player>
-  <video-minimal-skin>
-    <video class="aspect-auto md:aspect-video" src={src} playsinline></video>
-  </video-minimal-skin>
+  <media-container style="width: 100%; height: 100%;">
+    {
+      minimal &&
+      <video-minimal-skin>
+        <video class={`${className}`} src={src} playsinline={inline} {...setup}/>
+      </video-minimal-skin>
+    }
+    {!minimal && <video class={`${className}`} src={src} playsinline={inline} {...setup} />}
+  </media-container>
 </video-player>
