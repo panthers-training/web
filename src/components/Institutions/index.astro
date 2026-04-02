@@ -1,0 +1,37 @@
+---
+interface Props {
+  images: { src: string; alt: string }[];
+  itemsPerRow?: number;
+}
+
+const { images, itemsPerRow = 3 } = Astro.props;
+
+const rows: { src: string; alt: string }[][] = [];
+for (let i = 0; i < images.length; i += itemsPerRow) {
+  rows.push(images.slice(i, i + itemsPerRow));
+}
+
+const hasMultipleRows = rows.length >= 2;
+---
+
+<section class="w-full px-8 md:px-32 py-32 flex flex-col gap-6">
+  <h2 class="text-2xl md:text-3xl">Instituciones que han trabajado con nosotros</h2>
+  {rows.map((row, rowIndex) => {
+    const isLastRow = rowIndex === rows.length - 1;
+    const isPartial = row.length < itemsPerRow;
+    const centered = hasMultipleRows && isLastRow && isPartial;
+    return (
+      <div class={`flex flex-wrap gap-6 ${centered ? 'justify-center' : ''}`}>
+        {row.map((image) => (
+          <div class="flex-none w-[calc(33.333%-1rem)]">
+            <img
+              src={image.src}
+              alt={image.alt}
+              class="w-full aspect-video object-cover rounded-lg"
+            />
+          </div>
+        ))}
+      </div>
+    );
+  })}
+</section>
