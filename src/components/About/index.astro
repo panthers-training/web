@@ -1,32 +1,92 @@
-<section class="p-8 xl:p-32 flex flex-col gap-y-4 xl:gap-y-16">
-  <h2 class="text-2xl xl:text-7xl">¿Qué es Panthers Training?</h2>
-  <div class="grid grid-cols-1 grid-rows-2 xl:grid-rows-1 xl:grid-cols-2 gap-x-16 gap-y-8">
-    <div class="hidden xl:flex flex-col h-full justify-center">
-      <p class="text-white text-2xl xl:text-3xl min-h-dvh flex items-center">
+<section class="p-8 lg:p-32 flex flex-col gap-y-4 lg:gap-y-16">
+  <h2 class="text-2xl lg:text-7xl">¿Qué es Panthers Training?</h2>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-x-16 lg:gap-y-8">
+    <div class="hidden lg:flex flex-col h-full justify-center">
+      <p data-slide-index="0" class="text-white text-2xl xl:text-3xl lg:min-h-dvh flex items-center">
         Somos un equipo de profesionales en preparación física. En Panthers Training, creemos que puedes alcanzar nuevas altitudes.
       </p>
-      <p class="text-white text-2xl xl:text-3xl min-h-dvh flex items-center">
+      <p data-slide-index="1" class="text-white text-2xl xl:text-3xl lg:min-h-dvh flex items-center">
         Nuestro desempeño se basa en la ciencia del deporte, la experiencia y la pasión por ayudar a nuestros clientes a alcanzar sus objetivos.
       </p>
-      <p class="text-white text-2xl xl:text-3xl min-h-dvh flex items-center">
+      <p data-slide-index="2" class="text-white text-2xl xl:text-3xl lg:min-h-dvh flex items-center">
         Ofrecemos planes personalizados de entrenamiento, asesoramiento nutricional y apoyo continuo para garantizar que cada persona pueda lograr su mejor versión física.
       </p>
-      <p class="text-accent text-2xl xl:text-3xl min-h-dvh flex items-center">Y queremos estar ahí para ello.</p>
+      <p data-slide-index="3" class="text-accent text-2xl xl:text-3xl lg:min-h-dvh flex items-center">Y queremos estar ahí para ello.</p>
     </div>
-    <figure class="relative xl:sticky flex flex-col items-center top-16 aspect-3/4 justify-center">
-      <img src={import.meta.env.PUBLIC_PATH_URL + "/brayan_2.jpg"} alt="Panthers Training" class="rounded-lg w-full relative z-10 -scale-x-100 opacity-30 xl:opacity-100" />
-      <figcaption class="flex xl:hidden flex-col absolute z-20 gap-y-8 px-4">
-        <p class="text-white text-lg">
-          Somos un equipo de profesionales en preparación física. En Panthers Training, creemos que puedes alcanzar nuevas altitudes.
-        </p>
-        <p class="text-white text-lg">
-          Nuestro desempeño se basa en la ciencia del deporte, la experiencia y la pasión por ayudar a nuestros clientes a alcanzar sus objetivos.
-        </p>
-        <p class="text-white text-lg">
-          Ofrecemos planes personalizados de entrenamiento, asesoramiento nutricional y apoyo continuo para garantizar que cada persona pueda lograr su mejor versión física.
-        </p>
-        <p class="text-accent text-lg">Y queremos estar ahí para ello.</p>
-      </figcaption>
+    <figure class="flex relative lg:sticky flex-col items-center lg:top-0 lg:h-dvh justify-center max-h-60">
+        <img
+          id="about-image"
+          alt="Panthers Training"
+          src=""
+          class="rounded-lg w-full h-full relative z-10 opacity-30 lg:opacity-100 object-cover"
+          style="transition: opacity 0.3s ease;"
+        />
     </figure>
+    <span>
+      <span class="text-white text-md md:text-2xl">
+            Somos un equipo de profesionales en preparación física. En Panthers Training, creemos que puedes alcanzar nuevas altitudes.
+      </span>
+      <span class="text-white text-md md:text-2xl">
+        Nuestro desempeño se basa en la ciencia del deporte, la experiencia y la pasión por ayudar a nuestros clientes a alcanzar sus objetivos.
+      </span>
+      <span class="text-white text-md md:text-2xl">
+        Ofrecemos planes personalizados de entrenamiento, asesoramiento nutricional y apoyo continuo para garantizar que cada persona pueda lograr su mejor versión física.
+      </span>
+      <span class="text-accent text-md md:text-2xl">Y queremos estar ahí para ello.</span>
+    </span>
   </div>
 </section>
+
+<script>
+  const BASE = import.meta.env.PUBLIC_PATH_URL ?? '';
+  const slides = [
+    BASE + '/about_1.jpg',
+    BASE + '/about_2.jpg',
+    BASE + '/about_3.jpg',
+    BASE + '/about_4.jpg',
+  ];
+  let currentSlide = 0;
+
+  const LG = window.matchMedia('(min-width: 1024px)');
+  const img = document.getElementById('about-image') as HTMLImageElement | null;
+
+  if (img) img.src = slides[currentSlide];
+  function initObserver() {
+    if (!LG.matches) return;
+
+    
+    const paragraphs = document.querySelectorAll<HTMLElement>('[data-slide-index]');
+
+    if (!img || paragraphs.length === 0) return;
+
+    // rootMargin shrinks the observable viewport to a horizontal band in the
+    // centre (~20% of the viewport height). Each min-h-dvh paragraph fires
+    // when it crosses that band, giving one trigger per paragraph as the user
+    // scrolls through.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          const index = parseInt((entry.target as HTMLElement).dataset.slideIndex ?? '0', 10);
+          if (index === currentSlide) continue;
+          currentSlide = index;
+          img.style.opacity = '0';
+          setTimeout(() => {
+            img.src = slides[index];
+            img.style.opacity = '1';
+          }, 150);
+        }
+      },
+      { rootMargin: '-40% 0px -40% 0px', threshold: 0 },
+    );
+
+    paragraphs.forEach((p) => observer.observe(p));
+  }
+
+  initObserver();
+
+  // Re-initialise if the user resizes into lg territory.
+  LG.addEventListener('change', () => {
+    if (LG.matches) initObserver();
+  });
+</script>

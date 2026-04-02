@@ -1,0 +1,11 @@
+section[data-section="announce"]::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: linear-gradient(to bottom, transparent, var(--color-true-black));
+  pointer-events: none;
+  z-index: 20;
+}

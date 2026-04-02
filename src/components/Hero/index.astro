@@ -1,17 +1,24 @@
 ---
 import './index.css';
 import Video from '../Video/index.astro';
+
+const config = {
+  loop: true,
+  fluid: true,
+  muted: true,
+  autoplay: true,
+};
 ---
 
 <section data-section="hero" class="h-dvh relative">
-  <Video src={import.meta.env.PUBLIC_PATH_URL + "/hero.webm"} class='absolute z-10 aspect-video h-full w-full' setup={{ autoplay: true, muted: true, loop: true }}/>
+  <Video src={import.meta.env.PUBLIC_PATH_URL + "/hero.webm"} class='absolute object-cover h-full w-full' containerClass="absolute inset-0" setup={config}/>
   <div class="max-w-360 px-8 h-full py-16 mx-auto grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 items-center relative z-10">
     <figure data-section="hero-logo" class="-mt-20">
       <img class="max-h-full max-w-full" src={import.meta.env.PUBLIC_PATH_URL + "/panthers.training-4k-transparent-logo.png"}/>
       <figcaption class="text-sm text-end mt-2">by Carlos Ramirez</figcaption>
     </figure>
-    <button class="cursor-pointer transition-colors duration-200 hover:shadow-md mt-24 bg-black text-accent border border-accent rounded-sm max-w-3xs text-xl p-4 justify-self-center lg:justify-self-end hover:bg-accent hover:text-black">
+    <a href="#" class="cursor-pointer transition-colors duration-200 hover:shadow-md mt-24 bg-black text-accent rounded-sm max-w-3xs text-xl p-4 justify-self-center lg:justify-self-end hover:bg-accent hover:text-black">
       Ir al siguiente nivel
-    </button>
+    </a>
   </div>
 </section>

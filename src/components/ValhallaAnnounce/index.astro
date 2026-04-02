@@ -1,0 +1,33 @@
+---
+// import './index.css';
+import { Icon } from 'astro-icon/components';
+import Video from '../Video/index.astro';
+const config = {
+  loop: true,
+  fluid: true,
+  muted: true,
+  autoplay: true,
+};
+---
+
+<section data-section="announce" class="py-16 px-8 xl:px-32 xl:py-32 relative ">
+  <Video src={import.meta.env.PUBLIC_PATH_URL + "/daniel-leon.webm"} class='absolute object-cover h-full w-full z-0' containerClass="absolute inset-0 z-0" setup={config}/>
+  <a href="/" class="rounded-full bg-accent text-black relative p-4 gap-x-2 flex justify-self-start items-center">
+    <Icon name="lets-icons:arrow-left-long-light" class="size-7" />
+    <span>Volver al inicio</span>
+  </a>
+  <div class="flex flex-col mt-10 gap-y-4 xl:gap-y-16 relative z-10 h-full min-h-dvh">
+    <h1 class="text-2xl xl:text-7xl">Desbloquea el siguiente nivel.</h1>
+    <p class="text-white text-lg xl:text-3xl gap-x-4 flex flex-col xl:flex-row">
+      <span class="text-white">Estamos trabajando en tu siguiente aventura 👷‍♂️:</span>
+      <span class="text-accent italic font-bold">Panthers Valhalla.</span>
+    </p>
+  
+    <p class="text-white text-lg xl:text-3xl gap-x-4 flex">Valhalla será la nueva experiencia para aquellos que encuentran el siguiente nivel en elevar a otros.</p>
+    <p class="text-white text-lg xl:text-3xl gap-x-4 flex">Podrás encontrar todos los recursos necesarios que te permiten ayudar a los demas a convertirse en parte del equipo Panthers.</p>
+    <p class="text-white text-lg xl:text-3xl gap-x-4 flex">Mantente al tanto a través de nuestras redes y canales oficiales.</p>
+  
+    <p class="text-accent text-lg xl:text-3xl gap-x-4 flex self-end relative">Escoge tu camino y únete a la aventura.</p>
+  </div>
+</section>
+
