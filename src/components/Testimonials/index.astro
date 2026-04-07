@@ -1,0 +1,76 @@
+---
+const row1 = [
+  { name: "Anónimo", quote: "Panthers Training cambió mi vida. El equipo te lleva más allá de tus límites de la mejor manera posible." },
+  { name: "Anónimo", quote: "El mejor cuerpo técnico con el que he trabajado. De verdad se preocupan por tu progreso." },
+  { name: "Anónimo", quote: "Llegué sin poder correr un kilómetro. Seis meses después competí en mi primer evento. Increíble." },
+  { name: "Anónimo", quote: "La hermandad aquí es real. Nunca entrenas solo, aunque llegues por tu cuenta." },
+  { name: "Anónimo", quote: "Panthers me dio la disciplina que me faltaba. También mejoré en el trabajo, no solo en el gimnasio." },
+  { name: "Anónimo", quote: "He probado otros gimnasios y programas. Nada se compara a lo que hacen aquí." },
+  { name: "Anónimo", quote: "Cada sesión es un reto, pero los entrenadores siempre se aseguran de que lo hagas bien, no solo rápido." },
+];
+
+const row2 = [
+  { name: "Anónimo", quote: "Solo la guía de nutrición ya valió la pena. Por fin entiendo cómo alimentar mi cuerpo." },
+  { name: "Anónimo", quote: "Panthers Training no es solo un gimnasio, es una comunidad. Espero cada sesión con ganas." },
+  { name: "Anónimo", quote: "Perdí 18 kg en cuatro meses sin sentir que me estaba privando de nada. El programa es así de bueno." },
+  { name: "Anónimo", quote: "Mi entrenador recuerda mis metas, me escribe entre sesiones y celebra cada logro conmigo de verdad." },
+  { name: "Anónimo", quote: "Al principio me intimidaba, pero todos aquí son muy acogedores. Sin juicios, solo trabajo duro." },
+  { name: "Anónimo", quote: "La programación es inteligente. Se nota el pensamiento detrás de cada ciclo de entrenamiento." },
+  { name: "Anónimo", quote: "Me inscribí por tres meses y ahora no me imagino entrenando en otro lugar." },
+];
+
+const stars = "★★★★★";
+---
+
+<section class="w-full py-24 overflow-hidden flex flex-col gap-8">
+  <div class="px-8 md:px-32 mb-4">
+    <h2 class="text-2xl md:text-3xl">Lo que dicen nuestros atletas</h2>
+  </div>
+
+  <!-- Row 1: slides right (left-to-right visual motion) -->
+  <div class="overflow-hidden w-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+    <div class="testimonials-row testimonials-row--right flex gap-6 w-max">
+      {[...row1, ...row1].map((t) => (
+        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+          <span class="text-accent text-sm tracking-widest">{stars}</span>
+          <p class="text-white/80 text-sm leading-relaxed">"{t.quote}"</p>
+          <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Row 2: slides left (right-to-left visual motion) -->
+  <div class="overflow-hidden w-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
+    <div class="testimonials-row testimonials-row--left flex gap-6 w-max">
+      {[...row2, ...row2].map((t) => (
+        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+          <span class="text-accent text-sm tracking-widest">{stars}</span>
+          <p class="text-white/80 text-sm leading-relaxed">"{t.quote}"</p>
+          <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .testimonials-row--right {
+    animation: scroll-right 35s linear infinite;
+  }
+
+  .testimonials-row--left {
+    animation: scroll-left 35s linear infinite;
+  }
+
+  @keyframes scroll-right {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes scroll-left {
+    0% { transform: translateX(-50%); }
+    100% { transform: translateX(0); }
+  }
+
+</style>
