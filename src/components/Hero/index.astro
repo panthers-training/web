@@ -12,13 +12,27 @@ const config = {
 
 <section data-section="hero" class="h-dvh relative">
   <Video src={import.meta.env.PUBLIC_PATH_URL + "/hero.webm"} class='absolute object-cover h-full w-full' containerClass="absolute inset-0" setup={config}/>
-  <div class="max-w-360 px-8 h-full py-16 mx-auto grid grid-rows-2 lg:grid-rows-1 lg:grid-cols-2 items-center relative z-10">
-    <figure data-section="hero-logo" class="-mt-20">
-      <img class="max-h-full max-w-full" src={import.meta.env.PUBLIC_PATH_URL + "/panthers.training-4k-transparent-logo.png"}/>
-      <figcaption class="text-sm text-end mt-2">by Carlos Ramirez</figcaption>
+  <div class="flex flex-col justify-between max-w-360 px-8 h-full py-16 mx-auto relative z-10">
+    <figure class="flex flex-col max-w-150 text-end" data-section="hero-logo">
+      <img class="max-h-full max-w-full" src={import.meta.env.PUBLIC_PATH_URL + "/logo.png"}/>
+      <figcaption class="text-2xl mt-2 flex flex-col text-white">
+        <span>Entrenador profesional</span>
+        <span>y preparador físico de alto rendimiento</span>
+      </figcaption>
     </figure>
-    <a href="#" class="cursor-pointer transition-colors duration-200 hover:shadow-md mt-24 bg-black text-accent rounded-sm max-w-3xs text-xl p-4 justify-self-center lg:justify-self-end hover:bg-accent hover:text-black">
-      Ir al siguiente nivel
-    </a>
+    <h2 class="text-xl xl:text-3xl flex flex-col text-end pb-32">
+      <span>
+        Optimización del rendimiento.
+      </span>
+      <span class="text-white">
+        Transformación física.
+      </span>
+      <span>
+        Rehabilitación integral basada en ciencia.
+      </span>
+      <span class="text-white">
+        Experiencia real.
+      </span>
+    </h2>
   </div>
 </section>

@@ -1,6 +1,10 @@
 ---
+interface Props {
+	navigationLinks?: Array<{ label: string; href: string; hidden?: boolean; className?: string; }>;
+}
 import Nav from '../components/Nav.astro';
 import '../styles/global.css';
+const { navigationLinks = [] } = Astro.props;
 ---
 
 <html lang="en">
@@ -13,7 +17,7 @@ import '../styles/global.css';
 		<title>Astro</title>
 	</head>
 	<body>
-		<Nav />
+		<Nav navigationLinks={navigationLinks} />
 		<slot />
 	</body>
 </html>

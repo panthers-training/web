@@ -1,0 +1,64 @@
+---
+import { Icon } from 'astro-icon/components';
+import Section from '../../../components/Section/index.astro';
+---
+
+<Section section="me-brief" containerClassName="text-xl xl:text-3xl flex flex-col min-h-full justify-center gap-y-16" className='min-h-dvh'>
+  <h2 class="italic uppercase flex flex-col gap-y-4">
+    <span class="text-2xl xl:text-7xl text-white">
+      Tu entrenador
+    </span>
+  </h2>
+  <p class="flex flex-col gap-y-8">
+    <span>
+      Soy Carlos Ramírez.
+    </span>
+    <span class="text-white">
+      Preparador físico especializado en alto rendimiento, medicina deportiva enfocado en llevar a cada atleta o persona a su máximo potencial físico, ya sea en el ámbito competitivo, salud o estética.
+    </span>
+  </p>
+  <div class="flex flex-col gap-y-4 flex-wrap">
+    <h2>Mi enfoque integral consiste en:</h2>
+    <div class="flex flex-wrap gap-4">
+      <div class="cursor-pointer w-full md:w-1/4 shrink-0 grow border border-white/10 rounded-2xl p-6 flex flex-col gap-y-4 transition-shadow duration-200 shadow-md hover:shadow-gray-600/3 group">
+        <h3 class="md:min-h-21 text-white">Ciencia del entrenamiento</h3>
+        <p class="flex flex-col gap-y-4 text-lg grow">
+          <span>
+            Transformamos datos en resultados.
+          </span>
+          <span>
+            En mente, cuerpo y rendimiento.
+          </span>
+          <span>
+            No hacemos magia, solo resultados medibles
+          </span>
+        </p>
+        <Icon name="lets-icons:atom-light" class="size-16 duration-700 rounded-full border border-slate-600 block max-w-min p-2 group-hover:last:animate-spin self-end" />
+      </div>
+      <div class="cursor-pointer w-full md:w-1/4 shrink-0 grow border border-white/10 rounded-2xl p-6 flex flex-col gap-y-4 transition-shadow duration-200 shadow-md hover:shadow-gray-600/3 group">
+        <h3 class="md:min-h-21 text-white">Experiencia práctica en alto nivel competitivo</h3>
+        <p class="flex flex-col gap-y-4 text-lg grow">
+          <span>
+            Hemos realizado preparación física a productor musical rumbo a los Latin Grammys.
+          </span>
+          <span>
+            Desarrollamos atletas en todo tipo de eventos hasta aquellos de mayor prestigio como el Mr. Olympia.
+          </span>
+          <Icon name="lets-icons:trophy-light" class="size-16 duration-700 rounded-full border border-slate-600 block max-w-min p-2 self-end" />
+        </p>
+      </div>
+      <div class="cursor-pointer w-full md:w-1/4 shrink-0 grow border border-white/10 rounded-2xl p-6 flex flex-col gap-y-4 transition-shadow duration-200 shadow-md hover:shadow-gray-600/3 group">
+        <h3 class="md:min-h-21 text-white">Colaboración con profesionales de la salud</h3>
+        <p class="flex flex-col gap-y-4 text-lg grow">
+          <span>
+            Mi metodología está diseñada para lograr resultados medibles.
+          </span>
+          <span>
+            Todo en el menor tiempo posible, sin comprometer la salud ni el rendimiento a largo plazo.
+          </span>
+        </p>
+        <Icon name="lets-icons:stethoscope-light" class="size-16 duration-700 rounded-full border border-slate-600 block max-w-min p-2 self-end" />
+      </div>
+    </div>
+  </div>
+</Section>

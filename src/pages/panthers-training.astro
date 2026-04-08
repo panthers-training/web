@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/index.astro';
+import Panthers from '../components/Panthers/index.astro';
+import Brief from '../blocks/panthers-training/Brief/index.astro';
+import About from '../components/About/index.astro';
+import Footer from '../components/Footer/index.astro';
+import Nutrition from '../components/Nutrition/index.astro';
+import Nutrifit from '../components/Nutrifit/index.astro';
+import Testimonials from '../components/Testimonials/index.astro';
+import Institutions from '../components/Institutions/index.astro';
+const BASE = import.meta.env.PUBLIC_PATH_URL ?? '';
+const links = [
+  { label: 'Inicio', href: BASE + '/' },
+	{ label: 'Panthers Valhalla', href: BASE + '/valhalla' },
+	{ label: 'Contacto', href: '#contact', className: 'text-accent bg-black/75' },
+];
+---
+
+<Layout navigationLinks={links}>
+  <Panthers />
+  <Brief />
+  <About />
+  <Nutrition />
+	<Nutrifit />
+  <Testimonials />
+  <Institutions images={[
+		{ src: BASE + '/institution_1.jpg', alt: 'Institution 1' },
+		{ src: BASE + '/institution_2.jpg', alt: 'Institution 2' },
+		{ src: BASE + '/institution_3.jpg', alt: 'Institution 3' },
+		{ src: BASE + '/institution_4.jpg', alt: 'Institution 4' },
+		{ src: BASE + '/institution_5.jpg', alt: 'Institution 5' },
+		{ src: BASE + '/institution_6.jpg', alt: 'Institution 6' },
+	]} />
+  <Footer owner="Panthers Training" />
+</Layout>

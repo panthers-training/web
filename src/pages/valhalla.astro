@@ -2,9 +2,15 @@
 import Layout from '../layouts/index.astro';
 import ValhallaAnnounce from '../components/ValhallaAnnounce/index.astro';
 import Footer from '../components/Footer/index.astro';
+const BASE = import.meta.env.PUBLIC_PATH_URL ?? '';
+const links = [
+	{ label: 'Inicio', href: BASE + '/' },
+	{ label: 'Panthers Training', href: BASE + '/panthers-training' },
+	{ label: 'Contacto', href: '#contact', className: 'text-accent bg-black/75' },
+];
 ---
 
-<Layout>
+<Layout navigationLinks={links}>
 	<ValhallaAnnounce />
 	<Footer />
 </Layout>

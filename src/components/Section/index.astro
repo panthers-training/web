@@ -1,0 +1,21 @@
+---
+import cn from 'classnames';
+interface Props {
+  className?: string;
+  containerClassName?: string;
+  section?: string;
+}
+
+const { className = '', containerClassName = '', section = '' } = Astro.props as Props;
+const classes = {
+  section: cn('py-24', className),
+  container: cn('px-8 xl:px-32 mx-auto', containerClassName),
+}
+---
+
+
+<section class={classes.section} data-section={section}>
+  <div class={classes.container}>
+    <slot />
+  </div>
+</section>

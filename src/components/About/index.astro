@@ -83,20 +83,20 @@
     paragraphs.forEach((p) => observer!.observe(p));
   }
 
-  initObserver();
+  // initObserver();
 
   // Re-initialise if the user resizes into md territory.
-  MD.addEventListener('change', () => {
-    if (MD.matches) {
-      initObserver();
-      return;
-    }
+  // MD.addEventListener('change', () => {
+  //   if (MD.matches) {
+  //     initObserver();
+  //     return;
+  //   }
 
-    if (img) img.src = slides[0];
+  //   if (img) img.src = slides[0];
 
-    if (observer) {
-      observer.disconnect();
-      observer = null;
-    }
-  });
+  //   if (observer) {
+  //     observer.disconnect();
+  //     observer = null;
+  //   }
+  // });
 </script>
