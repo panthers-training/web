@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 interface Props {
 	navigationLinks?: Array<{ label: string; href: string; hidden?: boolean; className?: string; }>;
 }
@@ -10,8 +12,9 @@ const { navigationLinks = [] } = Astro.props;
 	<a id="nav-logo" href={import.meta.env.PUBLIC_PATH_URL + "/"} class={`transition-opacity duration-300 ${isHomePage ? 'opacity-0 pointer-events-none' : ''}`}>
 		<img class="h-10" src={import.meta.env.PUBLIC_PATH_URL + "/logo.png"} alt="Panthers Training Logo"/>
 	</a>
-	<div class="text-white py-4 flex justify-between">
-		<!-- Navigation Links -->
+
+	<!-- Desktop nav links (lg+) -->
+	<div class="text-white py-4 hidden lg:flex justify-between">
 		<div class="gap-8">
 			<ul class="flex items-center gap-x-2">
 				{
@@ -30,11 +33,67 @@ const { navigationLinks = [] } = Astro.props;
 			</ul>
 		</div>
 	</div>
+
+	<!-- Mobile hamburger button (below lg) -->
+	<button id="mobile-menu-toggle" class="flex lg:hidden text-white p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+		<Icon name="solar:hamburger-menu-outline" class="size-8" />
+	</button>
 </nav>
+
+<!-- Mobile fullscreen menu (below lg) -->
+<div
+	id="mobile-menu"
+	class="fixed inset-0 bg-black z-60 flex flex-col items-center justify-center lg:hidden translate-x-full transition-transform duration-300 ease-in-out"
+	aria-hidden="true"
+>
+	<button id="mobile-menu-close" class="absolute top-6 right-8 text-white p-2" aria-label="Close menu">
+		<Icon name="solar:close-circle-bold" class="size-8" />
+	</button>
+
+	<ul class="flex flex-col items-center gap-y-10">
+		{
+			navigationLinks.map((link) => (
+				<li>
+					<a
+						href={link.href}
+						class={`mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-200 ${link.className ?? ''}`}
+					>
+						{link.label}
+					</a>
+				</li>
+			))
+		}
+	</ul>
+</div>
 
 <script define:vars={{ isHomePage }}>
 	const nav = document.getElementById('main-nav');
 	const logo = document.getElementById('nav-logo');
+	const mobileMenu = document.getElementById('mobile-menu');
+	const toggleBtn = document.getElementById('mobile-menu-toggle');
+	const closeBtn = document.getElementById('mobile-menu-close');
+
+	function openMenu() {
+		mobileMenu?.classList.remove('translate-x-full');
+		mobileMenu?.setAttribute('aria-hidden', 'false');
+		toggleBtn?.setAttribute('aria-expanded', 'true');
+		document.body.classList.add('overflow-hidden');
+	}
+
+	function closeMenu() {
+		mobileMenu?.classList.add('translate-x-full');
+		mobileMenu?.setAttribute('aria-hidden', 'true');
+		toggleBtn?.setAttribute('aria-expanded', 'false');
+		document.body.classList.remove('overflow-hidden');
+	}
+
+	toggleBtn?.addEventListener('click', openMenu);
+	closeBtn?.addEventListener('click', closeMenu);
+
+	// Close menu when a nav link is clicked
+	mobileMenu?.querySelectorAll('.mobile-nav-link').forEach((link) => {
+		link.addEventListener('click', closeMenu);
+	});
 
 	function handleScroll() {
 		const scrolled = window.scrollY > 0;
@@ -71,7 +130,6 @@ const { navigationLinks = [] } = Astro.props;
 		background-color: rgba(0, 0, 0, 0.8);
 		border-bottom-color: var(--color-accent);
 	}
-
 
 	@media (width >= 1024px) {
 		.nav-link:hover .nav-link-underline {
