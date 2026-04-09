@@ -1,23 +1,7 @@
 ---
-const row1 = [
-  { name: "Anónimo", quote: "Panthers Training cambió mi vida. El equipo te lleva más allá de tus límites de la mejor manera posible." },
-  { name: "Anónimo", quote: "El mejor cuerpo técnico con el que he trabajado. De verdad se preocupan por tu progreso." },
-  { name: "Anónimo", quote: "Llegué sin poder correr un kilómetro. Seis meses después competí en mi primer evento. Increíble." },
-  { name: "Anónimo", quote: "La hermandad aquí es real. Nunca entrenas solo, aunque llegues por tu cuenta." },
-  { name: "Anónimo", quote: "Panthers me dio la disciplina que me faltaba. También mejoré en el trabajo, no solo en el gimnasio." },
-  { name: "Anónimo", quote: "He probado otros gimnasios y programas. Nada se compara a lo que hacen aquí." },
-  { name: "Anónimo", quote: "Cada sesión es un reto, pero los entrenadores siempre se aseguran de que lo hagas bien, no solo rápido." },
-];
-
-const row2 = [
-  { name: "Anónimo", quote: "Solo la guía de nutrición ya valió la pena. Por fin entiendo cómo alimentar mi cuerpo." },
-  { name: "Anónimo", quote: "Panthers Training no es solo un gimnasio, es una comunidad. Espero cada sesión con ganas." },
-  { name: "Anónimo", quote: "Perdí 18 kg en cuatro meses sin sentir que me estaba privando de nada. El programa es así de bueno." },
-  { name: "Anónimo", quote: "Mi entrenador recuerda mis metas, me escribe entre sesiones y celebra cada logro conmigo de verdad." },
-  { name: "Anónimo", quote: "Al principio me intimidaba, pero todos aquí son muy acogedores. Sin juicios, solo trabajo duro." },
-  { name: "Anónimo", quote: "La programación es inteligente. Se nota el pensamiento detrás de cada ciclo de entrenamiento." },
-  { name: "Anónimo", quote: "Me inscribí por tres meses y ahora no me imagino entrenando en otro lugar." },
-];
+import testimonials from './testimonials.json';
+const row1 = testimonials.slice(0, 5);
+const row2 = testimonials.slice(5, 10);
 
 const stars = "★★★★★";
 ---
@@ -29,11 +13,12 @@ const stars = "★★★★★";
 
   <!-- Row 1: slides right (left-to-right visual motion) -->
   <div class="overflow-hidden w-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-    <div class="testimonials-row testimonials-row--right flex gap-6 w-max">
+    <div class="testimonials-row testimonials-row--right flex gap-8 w-max">
       {[...row1, ...row1].map((t) => (
-        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3" data-quote={t.quote} data-name={t.name}>
           <span class="text-accent text-sm tracking-widest">{stars}</span>
-          <p class="text-white/80 text-sm leading-relaxed">"{t.quote}"</p>
+          <p class="testimonial-quote text-white/80 text-sm leading-relaxed line-clamp-4">"{t.quote}"</p>
+          <button class="read-more invisible self-start text-accent/70 text-xs uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">Leer más</button>
           <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
         </div>
       ))}
@@ -42,17 +27,28 @@ const stars = "★★★★★";
 
   <!-- Row 2: slides left (right-to-left visual motion) -->
   <div class="overflow-hidden w-full" style="mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);">
-    <div class="testimonials-row testimonials-row--left flex gap-6 w-max">
+    <div class="testimonials-row testimonials-row--left flex gap-8 w-max">
       {[...row2, ...row2].map((t) => (
-        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3">
+        <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3" data-quote={t.quote} data-name={t.name}>
           <span class="text-accent text-sm tracking-widest">{stars}</span>
-          <p class="text-white/80 text-sm leading-relaxed">"{t.quote}"</p>
+          <p class="testimonial-quote text-white/80 text-sm leading-relaxed line-clamp-4">"{t.quote}"</p>
+          <button class="read-more invisible self-start text-accent/70 text-xs uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">Leer más</button>
           <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
         </div>
       ))}
     </div>
   </div>
 </section>
+
+<!-- Modal -->
+<div id="testimonial-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-sm p-8">
+  <div class="bg-[#0e0e0e] border border-white/10 rounded-2xl p-8 max-w-lg w-full flex flex-col gap-4 relative">
+    <button id="modal-close" class="absolute top-4 right-4 text-white/30 hover:text-white transition-colors text-lg leading-none cursor-pointer">✕</button>
+    <span class="text-accent text-sm tracking-widest">{stars}</span>
+    <p id="modal-quote" class="text-white/80 text-sm leading-relaxed"></p>
+    <span id="modal-name" class="text-accent/60 text-xs uppercase tracking-widest mt-2"></span>
+  </div>
+</div>
 
 <style>
   .testimonials-row--right {
@@ -72,5 +68,51 @@ const stars = "★★★★★";
     0% { transform: translateX(-50%); }
     100% { transform: translateX(0); }
   }
-
 </style>
+
+<script>
+  const modal = document.getElementById('testimonial-modal')!;
+  const modalQuote = document.getElementById('modal-quote')!;
+  const modalName = document.getElementById('modal-name')!;
+
+  function openModal(quote: string, name: string) {
+    modalQuote.textContent = `"${quote}"`;
+    modalName.textContent = name;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    document.body.style.overflow = '';
+  }
+
+  // Reveal "Leer más" only on cards where the quote is actually truncated
+  document.querySelectorAll<HTMLElement>('.testimonial-quote').forEach((el) => {
+    if (el.scrollHeight > el.clientHeight) {
+      const btn = el.nextElementSibling as HTMLElement;
+      btn?.classList.remove('invisible');
+    }
+  });
+
+  // Delegate clicks for "Leer más" buttons
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+
+    if (target.classList.contains('read-more')) {
+      const card = target.closest<HTMLElement>('[data-quote]');
+      if (card) openModal(card.dataset.quote!, card.dataset.name!);
+      return;
+    }
+
+    if (target === modal || target.id === 'modal-close') {
+      closeModal();
+    }
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+</script>

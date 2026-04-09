@@ -1,0 +1,57 @@
+---
+import { Icon } from 'astro-icon/components';
+import Section from '../../../components/Section/index.astro';
+---
+
+<Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
+  <h2 class="italic uppercase flex flex-col gap-y-4">
+    <span class="text-2xl xl:text-7xl text-white">
+      Mi experiencia
+    </span>
+  </h2>
+  <p>Mi trayectoria se respalda en resultados comprobables en diferentes áreas</p>
+  <ul class="flex items-center flex-col max-w-96 mx-auto">
+    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
+      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
+        <Icon name="lets-icons:speed-alt-light" class="size-8"/>
+      </span>
+      <p class="flex flex-col">
+        <span>Transformaciones físicas en lapsos cortos de tiempo,</span>
+        <span>optimizando composición corporal y rendimiento.</span>
+      </p>
+    </li>
+    <li class="flex justify-center py-0" aria-hidden="true">
+      <div class="w-px h-6 bg-white/20"></div>
+    </li>
+    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
+      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
+        <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
+      </span>
+      <p class="flex flex-col">
+        <span>Preparación de deportistas que han competido en escenarios mundiales y olímpicos.</span>
+      </p>
+    </li>
+    <li class="flex justify-center py-0" aria-hidden="true">
+      <div class="w-px h-6 bg-white/20"></div>
+    </li>
+    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
+      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
+        <Icon name="lets-icons:group-light" class="size-8"/>
+      </span>
+      <p class="flex flex-col">
+        <span>Procesos de rehabilitación post lesión en conjunto con médicos especialistas, logrando una reincorporación segura al deporte.</span>
+      </p>
+    </li>
+    <li class="flex justify-center py-0" aria-hidden="true">
+      <div class="w-px h-6 bg-white/20"></div>
+    </li>
+    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
+      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
+        <Icon name="lets-icons:favorite-light" class="size-8"/>
+      </span>
+      <p class="flex flex-col">
+        <span>Rehabilitación post cirugía cardíaca en colaboración con cardiólogos, priorizando la salud y recuperación funcional del paciente.</span>
+      </p>
+    </li>
+  </ul>
+</Section>

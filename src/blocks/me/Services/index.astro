@@ -1,4 +1,5 @@
 ---
+import './index.css';
 import { Icon } from 'astro-icon/components';
 import Section from '../../../components/Section/index.astro';
 ---
@@ -11,25 +12,28 @@ import Section from '../../../components/Section/index.astro';
   </h2>
   <p class="xl:text-end">Contamos con una gama de servicios diseñados para satisfacer las necesidades de cada atleta</p>
   <ul class="flex flex-wrap gap-8">
-    <li class="flex flex-col gap-y-4 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 border border-white/10 p-6text-lg">
+    <li class="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex gap-x-2 justify-between items-center">
         <h2 class="text-2xl">
           Competencias y Tecnología deportiva
         </h2>
         <div class="flex gap-x-2">
           <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
-            <Icon name="lets-icons:critical-duotone-line" class="size-8"/>
+            <Icon name="lets-icons:trophy-light" class="size-8"/>
           </span>
           <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
             <Icon name="lets-icons:cpu-light" class="size-8"/>
           </span>
         </div>
       </div>
-      <p class="text-white text-xl">
+      <p class="text-white text-xl group-hover:text-black grow">
         Planificación y ejecución de programas para atletas de cualquier disciplina que buscan competir al más alto nivel.
       </p>
+      <a class="text-accent self-end group-hover:text-black underline text-xl">
+        Quiero competir
+      </a>
     </li>
-    <li class="flex flex-col gap-y-4 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 border border-white/10 p-6text-lg">
+    <li class="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl">
           Entrenamiento Especializado en Geriatría
@@ -38,15 +42,18 @@ import Section from '../../../components/Section/index.astro';
           <Icon name="lets-icons:user-add-light" class="size-8"/>
         </span>
       </div>
-      <h3 class="text-white text-xl">Programas adaptados para adultos mayores enfocados en:</h3>
-      <ul class="text-white list-disc text-xl">
+      <h3 class="text-white group-hover:text-black text-xl">Programas adaptados para adultos mayores enfocados en:</h3>
+      <ul class="text-white list-disc m-0! text-xl relative group-hover:text-black" data-section="services-geriatric-training">
 	      <li>Movilidad</li>
 	      <li>Fuerza funcional</li>
 	      <li>Prevención de caídas</li>
 	      <li>Mejora de calidad de vida</li>
       </ul>
+      <a class="text-accent self-end group-hover:text-black underline text-xl">
+        Quiero mejorar mi calidad de vida
+      </a>
     </li>
-    <li class="flex flex-col gap-y-4 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 border border-white/10 p-6text-lg">
+    <li class="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl">
           Entrenamiento Post Lesión
@@ -55,11 +62,14 @@ import Section from '../../../components/Section/index.astro';
           <Icon name="lets-icons:chield-light" class="size-8"/>
         </span>
       </div>
-      <p class="text-white text-xl">
+      <p class="text-white text-xl group-hover:text-black grow">
         Reintegración progresiva al entrenamiento tras lesiones, cuidando cada fase del proceso para evitar recaídas.
       </p>
+      <a class="text-accent self-end group-hover:text-black underline text-xl">
+        Quiero recuperar mi actividad física
+      </a>
     </li>
-    <li class="flex flex-col gap-y-4 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 border border-white/10 p-6text-lg">
+    <li class="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-8 basis-full md:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center gap-x-2">
         <h2 class="text-2xl flex flex-col">
         <span>
@@ -70,11 +80,14 @@ import Section from '../../../components/Section/index.astro';
         <Icon name="lets-icons:world-light" class="size-8"/>
       </span>
       </div>
-      <p class="text-white text-xl">
-        Programas personalizados a distancia
-	      Seguimiento continuo
-	      Entrenamiento presencial con supervisión directa
-      </p>
+      <ul class="text-white list-disc m-0! text-xl relative group-hover:text-black grow" data-section="services-geriatric-training">
+        <li>Programas personalizados a distancia</li>
+        <li>Seguimiento continuo</li>
+        <li>Entrenamiento presencial con supervisión directa</li>
+      </ul>
+      <a class="text-accent self-end group-hover:text-black underline text-xl">
+        Quiero entrenar con ustedes
+      </a>
     </li>
   </ul>
 </Section>
