@@ -3,13 +3,14 @@ interface Props {
   type?: List.Type;
   listStyle?: List.Style;
   className?: string;
+  nonBulleted?: boolean;
 }
 
-const { type = 'unordered', listStyle = 'disc', className = '' } = Astro.props;
+const { type = 'unordered', listStyle = 'disc', className = '', nonBulleted = false } = Astro.props;
 
 const ListTag = type === 'unordered' ? 'ul' : 'ol';
 ---
 
-<ListTag class={className} data-list-element="list" data-list-style={listStyle}>
+<ListTag class={className} data-list-element={nonBulleted ? 'non-bulleted' : 'list'} data-list-style={listStyle}>
   <slot />
 </ListTag>

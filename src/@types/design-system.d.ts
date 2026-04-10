@@ -4,7 +4,7 @@ declare namespace Typography {
 
 declare namespace List {
   type Type = 'unordered' | 'ordered';
-  type Element = 'list' | 'item';
+  type Element = 'list' | 'item' | 'non-bulleted';
   type Style = 'disc' | 'decimal' | 'none';
 }
 

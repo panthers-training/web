@@ -1,6 +1,11 @@
-[data-list-element="list"] li {
+[data-list-element="list"] > li {
   position: relative;
   left: 1rem;
+}
+
+[data-list-element="non-bulleted"] > li {
+  position: relative;
+  left: 0;
 }
 
 [data-list-style="disc"] {

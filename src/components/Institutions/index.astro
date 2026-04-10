@@ -21,14 +21,15 @@ const hasMultipleRows = rows.length >= 2;
     const isLastRow = rowIndex === rows.length - 1;
     const isPartial = row.length < itemsPerRow;
     const centered = hasMultipleRows && isLastRow && isPartial;
+    const isOffsetRow = rowIndex % 2 !== 0;
     return (
-      <div class={`flex flex-wrap gap-6 ${centered ? 'justify-center' : ''}`}>
+      <div class={`flex flex-wrap gap-6 ${centered ? 'justify-center' : ''} ${isOffsetRow ? 'xl:ml-24' : ''}`}>
         {row.map((image) => (
           <div class="flex-none w-[calc(33.333%-1rem)]">
             <img
               src={image.src}
               alt={image.alt}
-              class="w-full aspect-video object-cover rounded-lg"
+              class="w-full aspect-square object-cover rounded-full"
             />
           </div>
         ))}

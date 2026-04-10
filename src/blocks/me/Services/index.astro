@@ -12,8 +12,8 @@ import ListItem from '../../../components/ListItem/index.astro';
     Servicios
   </Heading>
   <p class="text-xl xl:text-end">Trabajo con una gama de servicios diseñados para satisfacer las necesidades de cada atleta</p>
-  <ListItem className="flex flex-col md:flex-row flex-wrap gap-8">
-    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
+  <List className="flex flex-col flex-wrap lg:flex-row gap-8" listStyle='none' nonBulleted>
+    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full lg:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex gap-x-2 justify-between items-center">
         <h2 class="text-2xl">
           Competencias y Tecnología deportiva
@@ -34,7 +34,7 @@ import ListItem from '../../../components/ListItem/index.astro';
         Quiero competir
       </a>
     </ListItem>
-    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
+    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full lg:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl">
           Entrenamiento Especializado en Geriatría
@@ -44,7 +44,7 @@ import ListItem from '../../../components/ListItem/index.astro';
         </span>
       </div>
       <h3 class="text-white group-hover:text-black text-xl">Programas adaptados para adultos mayores enfocados en:</h3>
-      <List className="text-white list-disc m-0! text-xl relative group-hover:text-black" data-section="services-geriatric-training">
+      <List className="text-white list-disc m-0! text-xl relative group-hover:text-black">
 	      <ListItem>Movilidad</ListItem>
 	      <ListItem>Fuerza funcional</ListItem>
 	      <ListItem>Prevención de caídas</ListItem>
@@ -54,7 +54,7 @@ import ListItem from '../../../components/ListItem/index.astro';
         Quiero mejorar mi calidad de vida
       </a>
     </ListItem>
-    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
+    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full lg:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center">
         <h2 class="text-2xl">
           Entrenamiento Post Lesión
@@ -70,7 +70,7 @@ import ListItem from '../../../components/ListItem/index.astro';
         Quiero recuperar mi actividad física
       </a>
     </ListItem>
-    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
+    <ListItem className="transition-colors duration-150 cursor-pointer group flex flex-col gap-y-8 p-4 xl:p-8 basis-full lg:basis-1/3 2xl:basis-1/5 shrink-0 grow rounded-2xl bg-white/5 hover:bg-accent hover:text-black border border-white/10 text-lg">
       <div class="flex justify-between items-center gap-x-2">
         <h2 class="text-2xl flex flex-col">
         <span>
