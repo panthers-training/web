@@ -3,14 +3,47 @@ import { Icon } from 'astro-icon/components';
 import Section from '../../../components/Section/index.astro';
 ---
 
-<Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
+<Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 h-full" className="flex items-center py-40!">
   <h2 class="italic uppercase flex flex-col gap-y-4">
     <span class="text-2xl xl:text-7xl text-white text-center">
       Algunos de los atletas que han confiado en mí
     </span>
   </h2>
-  <ul class="flex items-center flex-col max-w-96 mx-auto">
-    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
+  <ul class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <li class="cursor-pointer basis-full md:basis-1/4 shrink-0 flex gap-x-4 overflow-hidden text-white rounded-md border border-white/10 text-xl group">
+      <figure class="relative flex flex-col items-center">
+        <img src={import.meta.env.PUBLIC_PATH_URL + "/yeomans.jpg"} alt="Athlete 1" class="rounded-t-md w-full h-full object-cover transition-transform group-hover:scale-105 relative z-10"/>
+        <figcaption class="flex flex-col text-center w-full py-4 z-20 uppercase absolute bottom-0 bg-linear-0 from-black to-transparent">
+          <span class="text-5xl text-start px-4">
+            Roberto Yeomans
+          </span>
+          <span class="text-accent capitalize italic text-end px-4">Campeón absoluto 2026 MR. Baja PYN</span>
+        </figcaption>
+      </figure>
+    </li>
+    <li class="cursor-pointer basis-full md:basis-1/4 shrink-0 flex gap-x-4 overflow-hidden text-white rounded-md border border-white/10 text-xl group">
+      <figure class="relative flex flex-col items-center">
+        <img src={import.meta.env.PUBLIC_PATH_URL + "/suseth.jpg"} alt="Athlete 2" class="rounded-t-md w-full h-full object-cover transition-transform group-hover:scale-105 relative z-10"/>
+        <figcaption class="flex flex-col text-center w-full py-4 z-20 uppercase absolute bottom-0 bg-linear-0 from-black to-transparent">
+          <span class="text-5xl text-start px-4">
+            Suseth Tamai
+          </span>
+          <span class="text-accent capitalize italic text-end px-4">Campeóna absoluta en categoría bikini</span>
+        </figcaption>
+      </figure>
+    </li>
+    <li class="cursor-pointer basis-full md:basis-1/4 shrink-0 flex gap-x-4 overflow-hidden text-white rounded-md border border-white/10 text-xl group">
+      <figure class="relative flex flex-col items-center">
+        <img src={import.meta.env.PUBLIC_PATH_URL + "/daniel-leon.jpg"} alt="Athlete 3" class="rounded-t-md w-full h-full object-cover transition-transform group-hover:scale-105 relative z-10"/>
+        <figcaption class="flex flex-col text-center w-full py-4 z-20 uppercase absolute bottom-0 bg-linear-0 from-black to-transparent">
+          <span class="text-5xl text-start px-4">
+            Daniel León
+          </span>
+          <span class="text-accent capitalize italic text-end px-4">
+            Campeón Bodybuilding MR. Baja PYN 2026
+          </span>
+        </figcaption>
+      </figure>
     </li>
   </ul>
 </Section>

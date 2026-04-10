@@ -5,53 +5,83 @@ import Section from '../../../components/Section/index.astro';
 
 <Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
   <h2 class="italic uppercase flex flex-col gap-y-4">
-    <span class="text-2xl xl:text-7xl text-white text-center">
+    <span class="text-2xl xl:text-7xl text-white">
       Mi experiencia
     </span>
   </h2>
-  <p class="text-center">Mi trayectoria se respalda en resultados comprobables en diferentes áreas</p>
-  <ul class="flex items-center flex-col max-w-96 mx-auto">
-    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
-      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
-        <Icon name="lets-icons:speed-alt-light" class="size-8"/>
-      </span>
-      <p class="flex flex-col">
-        <span>Transformaciones físicas en lapsos cortos de tiempo,</span>
-        <span>optimizando composición corporal y rendimiento.</span>
-      </p>
-    </li>
-    <li class="flex justify-center py-0" aria-hidden="true">
-      <div class="w-px h-6 bg-white/20"></div>
-    </li>
-    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
-      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
-        <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
-      </span>
-      <p class="flex flex-col">
-        <span>Preparación de deportistas que han competido en escenarios mundiales y olímpicos.</span>
-      </p>
-    </li>
-    <li class="flex justify-center py-0" aria-hidden="true">
-      <div class="w-px h-6 bg-white/20"></div>
-    </li>
-    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
-      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
-        <Icon name="lets-icons:group-light" class="size-8"/>
-      </span>
-      <p class="flex flex-col">
-        <span>Procesos de rehabilitación post lesión en conjunto con médicos especialistas, logrando una reincorporación segura al deporte.</span>
-      </p>
-    </li>
-    <li class="flex justify-center py-0" aria-hidden="true">
-      <div class="w-px h-6 bg-white/20"></div>
-    </li>
-    <li class="flex items-center gap-x-4 bg-white/5 p-4 text-white rounded-xl border border-white/10 text-xl">
-      <span class="bg-true-black rounded-full p-2 text-accent border border-white/10">
-        <Icon name="lets-icons:favorite-light" class="size-8"/>
-      </span>
-      <p class="flex flex-col">
-        <span>Rehabilitación post cirugía cardíaca en colaboración con cardiólogos, priorizando la salud y recuperación funcional del paciente.</span>
-      </p>
-    </li>
-  </ul>
+  <div class="flex flex-col gap-y-8 text-white">
+    <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h3 class="text-accent">Formación académica</h3>
+      <ul class="flex flex-col gap-4 list-disc">
+        <li>Lic. En Actividad Física y Deportes por UABC Mexicali.</li>
+        <li>Maestría en Medicina Deportiva "ESNECA" BUSINESS SCHOOL LATINOAMÉRICA.</li>
+      </ul>
+    </div>
+
+    <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h3 class="text-accent">Certificados</h3>
+      <ul class="flex flex-col xl:flex-row flex-wrap gap-2 list-disc">
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Fundamentos básicos en biomecánica.</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Federación nacional de Fútbol FIFA</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">U.S. Center for Safe Sport</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Entrenamiento Online</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional en trabajos en core y posturales</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional en Entrenamiento Cardiovascular</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional de Entrenamiento Funcional</li>
+        <li class="basis-full xl:basis-1/3 shrink-0 grow">Programación del entrenamiento para el atleta wellness APEKS PERFORMANCE</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col xl:flex-row gap-8">
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h4>Preparador fisico en:</h4>
+      <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
+        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <li>Selección U13 soccer USA (2019)</li>
+          <li>Atletas de futbol Americano de Calexico CA (2019-2020)</li>
+          <li>Seleccionado de gimnasia Mexicali (2020)</li>
+          <li>Seleccionado preolimpico de atletismo (2019-2020)</li>
+          <li>Director deportivo en Academia de soccer Fc. Panthers (2020-2022)</li>
+          <li>Atletas de basquetbol S.L.R.C. (2019-2023)</li>
+        </ul>
+      </div>
+    </div>
+
+
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h4>Asesor en:</h4>
+      <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
+        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <li>Materia de estancia como estudiante de Estructura clásica (Entrenamiento UABC Deportes 2022)</li>
+          <li>Materia de entrenamiento geriátrico (UABC Deportes 2022)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h4>Entrenador en:</h4>
+      <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
+        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <li>TRX (2018-2019)</li>
+          <li>Formaciones básicas de entrenamiento para la salud (2019-2021)</li>
+          <li>Área geriátrica (2020-2022)</li>
+          <li>MMA Profesional en campamentos (2023)</li>
+          <li>Preparador físico de fisicoculturismo, campeón de Baja California y 5to lugar Nacional (2024)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
+      <h4>Otros:</h4>
+      <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
+        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <li>Ganador de primer lugar en "Formula-ción de proyectos deportivos" (UABC Deportes 2022)</li>
+          <li>Invitado en "Campesinos sin Frontera EEUU" como asesor de entrenamiento para la diabetes (2023)</li>
+          <li>Estancia en el área de fisiología del deporte</li>
+          <li>Colaborador en Expo de Empleos (UABC Deportes 2023)</li>
+          <li>Evaluador físico de atletas de deportes (2022-continuo)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </Section>

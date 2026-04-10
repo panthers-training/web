@@ -8,7 +8,7 @@ const stars = "★★★★★";
 
 <section class="w-full py-24 overflow-hidden flex flex-col gap-8">
   <div class="px-8 md:px-32 mb-4">
-    <h2 class="text-2xl md:text-3xl">Lo que dicen nuestros atletas</h2>
+    <h2 class="text-2xl md:text-3xl">Atletas que confian en mi trabajo</h2>
   </div>
 
   <!-- Row 1: slides right (left-to-right visual motion) -->
@@ -16,10 +16,16 @@ const stars = "★★★★★";
     <div class="testimonials-row testimonials-row--right flex gap-8 w-max">
       {[...row1, ...row1].map((t) => (
         <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3" data-quote={t.quote} data-name={t.name}>
-          <span class="text-accent text-sm tracking-widest">{stars}</span>
-          <p class="testimonial-quote text-white/80 text-sm leading-relaxed line-clamp-4">"{t.quote}"</p>
-          <button class="read-more invisible self-start text-accent/70 text-xs uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">Leer más</button>
-          <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
+          <div class="flex gap-x-4 justify-between">
+            <span class="text-accent/60 text-xs uppercase tracking-widest">{t.name}</span>
+            {/* <span class="text-accent text-sm tracking-widest">{stars}</span> */}
+          </div>
+          <div class="flex flex-col gap-y-4">
+            <p class="testimonial-quote flex-1 text-white/80 text-sm leading-relaxed line-clamp-4">
+              "{t.quote}"
+            </p>
+            <button class="read-more invisible inline flex-none text-blue-400/70 text-xs uppercase tracking-widest hover:text-blue-400 transition-colors cursor-pointer w-full text-end">Leer más</button>
+          </div>
         </div>
       ))}
     </div>
@@ -30,10 +36,16 @@ const stars = "★★★★★";
     <div class="testimonials-row testimonials-row--left flex gap-8 w-max">
       {[...row2, ...row2].map((t) => (
         <div class="flex-none w-80 bg-white/5 border border-white/10 rounded-2xl p-6 flex flex-col gap-3" data-quote={t.quote} data-name={t.name}>
-          <span class="text-accent text-sm tracking-widest">{stars}</span>
-          <p class="testimonial-quote text-white/80 text-sm leading-relaxed line-clamp-4">"{t.quote}"</p>
-          <button class="read-more invisible self-start text-accent/70 text-xs uppercase tracking-widest hover:text-accent transition-colors cursor-pointer">Leer más</button>
-          <span class="text-accent/60 text-xs uppercase tracking-widest mt-auto">{t.name}</span>
+          <div class="flex gap-x-4 justify-between">
+            <span class="text-accent/60 text-xs uppercase tracking-widest">{t.name}</span>
+            {/* <span class="text-accent text-sm tracking-widest">{stars}</span> */}
+          </div>
+          <div class="flex flex-col gap-y-4">
+            <p class="testimonial-quote flex-1 text-white/80 text-sm leading-relaxed line-clamp-4">
+              "{t.quote}"
+            </p>
+            <button class="read-more invisible inline flex-none text-blue-400/70 text-xs uppercase tracking-widest hover:text-blue-400 transition-colors cursor-pointer w-full text-end">Leer más</button>
+          </div>
         </div>
       ))}
     </div>

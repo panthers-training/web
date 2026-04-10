@@ -21,18 +21,34 @@ const config = {
       </figcaption>
     </figure>
     <h2 class="text-xl xl:text-3xl flex flex-col text-end pb-32">
-      <span>
-        Optimización del rendimiento.
-      </span>
-      <span class="text-white">
-        Transformación física.
-      </span>
-      <span>
-        Rehabilitación integral basada en ciencia.
-      </span>
-      <span class="text-white">
-        Experiencia real.
-      </span>
+      <span class="hero-phrase text-white/40 transition-colors duration-600">Optimización del rendimiento.</span>
+      <span class="hero-phrase text-white/40 transition-colors duration-600">Transformación física.</span>
+      <span class="hero-phrase text-white/40 transition-colors duration-600">Rehabilitación integral basada en ciencia.</span>
+      <span class="hero-phrase text-white/40 transition-colors duration-600">Experiencia real.</span>
     </h2>
   </div>
 </section>
+
+<script>
+  const phrases = document.querySelectorAll<HTMLElement>('.hero-phrase');
+  let current = 0;
+
+  function activate(index: number) {
+    phrases[index].classList.remove('text-white/40');
+    phrases[index].classList.add('text-accent');
+  }
+
+  function deactivate(index: number) {
+    phrases[index].classList.remove('text-accent');
+    phrases[index].classList.add('text-white/40');
+  }
+
+  function advance() {
+    deactivate(current);
+    current = (current + 1) % phrases.length;
+    activate(current);
+  }
+
+  activate(current);
+  setInterval(advance, 3000);
+</script>
