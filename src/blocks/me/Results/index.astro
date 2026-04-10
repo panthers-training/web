@@ -1,17 +1,18 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Section from '../../../components/Section/index.astro';
+import Heading from '../../../components/Typography/Heading.astro';
+import List from '../../../components/List/index.astro';
+import ListItem from '../../../components/ListItem/index.astro';
 ---
 
 <Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
-  <h2 class="italic uppercase flex flex-col gap-y-4">
-    <span class="text-2xl xl:text-7xl text-white text-center">
-      Mis resultados
-    </span>
-  </h2>
+  <Heading level="2" className="italic uppercase flex flex-col gap-y-4 text-white text-center">
+    Mis resultados
+  </Heading>
   <p class="text-center">Mi trayectoria se respalda en resultados comprobables en diferentes áreas</p>
-  <ul class="flex flex-col max-w-xl mx-auto w-full">
-    <li class="flex gap-x-6">
+  <List className="flex flex-col max-w-xl mx-auto w-full">
+    <ListItem className="flex gap-x-6">
       <div class="flex flex-col items-center shrink-0">
         <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
           <Icon name="lets-icons:speed-alt-light" class="size-8"/>
@@ -21,8 +22,8 @@ import Section from '../../../components/Section/index.astro';
       <p class="text-white text-xl pb-8">
         Transformaciones corporales en lapsos cortos de tiempo.
       </p>
-    </li>
-    <li class="flex gap-x-6">
+    </ListItem>
+    <ListItem className="flex gap-x-6">
       <div class="flex flex-col items-center shrink-0">
         <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
           <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
@@ -32,8 +33,8 @@ import Section from '../../../components/Section/index.astro';
       <p class="text-white text-xl pb-8">
         Preparación de deportistas que han competido en escenarios mundiales y olímpicos.
       </p>
-    </li>
-    <li class="flex gap-x-6">
+    </ListItem>
+    <ListItem className="flex gap-x-6">
       <div class="flex flex-col items-center shrink-0">
         <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
           <Icon name="lets-icons:group-light" class="size-8"/>
@@ -43,8 +44,8 @@ import Section from '../../../components/Section/index.astro';
       <p class="text-white text-xl pb-8">
         Procesos de rehabilitación post lesión en conjunto con médicos especialistas, logrando una reincorporación segura al deporte.
       </p>
-    </li>
-    <li class="flex gap-x-6">
+    </ListItem>
+    <ListItem className="flex gap-x-6">
       <div class="flex flex-col items-center shrink-0">
         <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
           <Icon name="lets-icons:favorite-light" class="size-8"/>
@@ -53,6 +54,6 @@ import Section from '../../../components/Section/index.astro';
       <p class="text-white text-xl">
         Rehabilitación post cirugía cardíaca en colaboración con cardiólogos, priorizando la salud y recuperación funcional del paciente.
       </p>
-    </li>
-  </ul>
+    </ListItem>
+  </List>
 </Section>

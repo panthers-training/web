@@ -1,0 +1,16 @@
+---
+interface Props {
+  level: Typography.HeadingLevel;
+  className?: string;
+}
+
+const { level, className } = Astro.props;
+const HeadingTag = `h${level}`;
+---
+
+<HeadingTag data-typography-heading-level={level} class={className}>
+  <slot />
+</HeadingTag>
+
+
+

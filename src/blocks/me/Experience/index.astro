@@ -1,49 +1,49 @@
 ---
-import { Icon } from 'astro-icon/components';
+import List from '../../../components/List/index.astro';
 import Section from '../../../components/Section/index.astro';
+import ListItem from '../../../components/ListItem/index.astro';
+import Heading from '../../../components/Typography/Heading.astro';
 ---
 
 <Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
-  <h2 class="italic uppercase flex flex-col gap-y-4">
-    <span class="text-2xl xl:text-7xl text-white">
-      Mi experiencia
-    </span>
-  </h2>
+  <Heading level="2" className="italic uppercase flex flex-col gap-y-4 text-white">
+    Mi experiencia
+  </Heading>
   <div class="flex flex-col gap-y-8 text-white">
     <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h3 class="text-accent">Formación académica</h3>
-      <ul class="flex flex-col gap-4 list-disc">
-        <li>Lic. En Actividad Física y Deportes por UABC Mexicali.</li>
-        <li>Maestría en Medicina Deportiva "ESNECA" BUSINESS SCHOOL LATINOAMÉRICA.</li>
-      </ul>
+      <List className="flex flex-col gap-4">
+        <ListItem>Lic. En Actividad Física y Deportes por UABC Mexicali.</ListItem>
+        <ListItem>Maestría en Medicina Deportiva "ESNECA" BUSINESS SCHOOL LATINOAMÉRICA.</ListItem>
+      </List>
     </div>
 
     <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h3 class="text-accent">Certificados</h3>
-      <ul class="flex flex-col xl:flex-row flex-wrap gap-2 list-disc">
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Fundamentos básicos en biomecánica.</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Federación nacional de Fútbol FIFA</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">U.S. Center for Safe Sport</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Entrenamiento Online</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional en trabajos en core y posturales</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional en Entrenamiento Cardiovascular</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Internacional de Entrenamiento Funcional</li>
-        <li class="basis-full xl:basis-1/3 shrink-0 grow">Programación del entrenamiento para el atleta wellness APEKS PERFORMANCE</li>
-      </ul>
+      <List className="flex flex-col xl:flex-row flex-wrap gap-2">
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Fundamentos básicos en biomecánica.</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Federación nacional de Fútbol FIFA</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">U.S. Center for Safe Sport</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Entrenamiento Online</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Internacional en trabajos en core y posturales</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Internacional en Entrenamiento Cardiovascular</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Internacional de Entrenamiento Funcional</ListItem>
+        <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Programación del entrenamiento para el atleta wellness APEKS PERFORMANCE</ListItem>
+      </List>
     </div>
   </div>
   <div class="flex flex-col xl:flex-row gap-8">
     <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h4>Preparador fisico en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
-        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
-          <li>Selección U13 soccer USA (2019)</li>
-          <li>Atletas de futbol Americano de Calexico CA (2019-2020)</li>
-          <li>Seleccionado de gimnasia Mexicali (2020)</li>
-          <li>Seleccionado preolimpico de atletismo (2019-2020)</li>
-          <li>Director deportivo en Academia de soccer Fc. Panthers (2020-2022)</li>
-          <li>Atletas de basquetbol S.L.R.C. (2019-2023)</li>
-        </ul>
+        <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <ListItem>Selección U13 soccer USA (2019)</ListItem>
+          <ListItem>Atletas de futbol Americano de Calexico CA (2019-2020)</ListItem>
+          <ListItem>Seleccionado de gimnasia Mexicali (2020)</ListItem>
+          <ListItem>Seleccionado preolimpico de atletismo (2019-2020)</ListItem>
+          <ListItem>Director deportivo en Academia de soccer Fc. Panthers (2020-2022)</ListItem>
+          <ListItem>Atletas de basquetbol S.L.R.C. (2019-2023)</ListItem>
+        </List>
       </div>
     </div>
 
@@ -51,36 +51,36 @@ import Section from '../../../components/Section/index.astro';
     <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h4>Asesor en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
-        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
-          <li>Materia de estancia como estudiante de Estructura clásica (Entrenamiento UABC Deportes 2022)</li>
-          <li>Materia de entrenamiento geriátrico (UABC Deportes 2022)</li>
-        </ul>
+        <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <ListItem>Materia de estancia como estudiante de Estructura clásica (Entrenamiento UABC Deportes 2022)</ListItem>
+          <ListItem>Materia de entrenamiento geriátrico (UABC Deportes 2022)</ListItem>
+        </List>
       </div>
     </div>
 
     <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h4>Entrenador en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
-        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
-          <li>TRX (2018-2019)</li>
-          <li>Formaciones básicas de entrenamiento para la salud (2019-2021)</li>
-          <li>Área geriátrica (2020-2022)</li>
-          <li>MMA Profesional en campamentos (2023)</li>
-          <li>Preparador físico de fisicoculturismo, campeón de Baja California y 5to lugar Nacional (2024)</li>
-        </ul>
+        <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <ListItem>TRX (2018-2019)</ListItem>
+          <ListItem>Formaciones básicas de entrenamiento para la salud (2019-2021)</ListItem>
+          <ListItem>Área geriátrica (2020-2022)</ListItem>
+          <ListItem>MMA Profesional en campamentos (2023)</ListItem>
+          <ListItem>Preparador físico de fisicoculturismo, campeón de Baja California y 5to lugar Nacional (2024)</ListItem>
+        </List>
       </div>
     </div>
 
     <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
       <h4>Otros:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
-        <ul class="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
-          <li>Ganador de primer lugar en "Formula-ción de proyectos deportivos" (UABC Deportes 2022)</li>
-          <li>Invitado en "Campesinos sin Frontera EEUU" como asesor de entrenamiento para la diabetes (2023)</li>
-          <li>Estancia en el área de fisiología del deporte</li>
-          <li>Colaborador en Expo de Empleos (UABC Deportes 2023)</li>
-          <li>Evaluador físico de atletas de deportes (2022-continuo)</li>
-        </ul>
+        <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
+          <ListItem>Ganador de primer lugar en "Formula-ción de proyectos deportivos" (UABC Deportes 2022)</ListItem>
+          <ListItem>Invitado en "Campesinos sin Frontera EEUU" como asesor de entrenamiento para la diabetes (2023)</ListItem>
+          <ListItem>Estancia en el área de fisiología del deporte</ListItem>
+          <ListItem>Colaborador en Expo de Empleos (UABC Deportes 2023)</ListItem>
+          <ListItem>Evaluador físico de atletas de deportes (2022-continuo)</ListItem>
+        </List>
       </div>
     </div>
   </div>

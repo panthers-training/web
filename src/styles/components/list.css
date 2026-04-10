@@ -1,0 +1,16 @@
+[data-list-element="list"] li {
+  position: relative;
+  left: 1rem;
+}
+
+[data-list-style="disc"] {
+  @apply list-disc;
+}
+
+[data-list-style="decimal"] {
+  @apply list-decimal;
+}
+
+[data-list-srtyle="none"] {
+  @apply list-none;
+}

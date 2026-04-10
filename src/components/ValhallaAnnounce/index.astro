@@ -1,7 +1,7 @@
 ---
-// import './index.css';
 import { Icon } from 'astro-icon/components';
 import Video from '../Video/index.astro';
+import Heading from '../Typography/Heading.astro';
 const config = {
   loop: true,
   fluid: true,
@@ -17,7 +17,7 @@ const config = {
     <span>Volver al inicio</span>
   </a>
   <div class="flex flex-col mt-10 gap-y-4 xl:gap-y-16 relative z-10 h-full min-h-dvh">
-    <h1 class="text-2xl xl:text-7xl italic uppercase">Desbloquea el siguiente nivel</h1>
+    <Heading level="2" class="italic uppercase">Desbloquea el siguiente nivel</Heading>
     <p class="text-white text-lg xl:text-3xl gap-x-4 flex flex-col xl:flex-row">
       <span class="text-white">Estamos trabajando en tu siguiente aventura 👷‍♂️:</span>
       <span class="text-accent italic font-bold">Panthers Valhalla.</span>

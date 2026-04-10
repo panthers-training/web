@@ -1,0 +1,3 @@
+[data-typography-heading-level="2"] {
+  @apply text-2xl xl:text-7xl;
+}

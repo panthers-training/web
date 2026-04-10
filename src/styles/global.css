@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import './typography.css';
+@import './components/list.css';
 
 @font-face {
   font-family: 'Archivo';
@@ -140,7 +142,6 @@
     }
   }
 }
-
 
 html, body {
   color: var(--color-accent);

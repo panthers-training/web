@@ -1,0 +1,15 @@
+---
+interface Props {
+  type?: List.Type;
+  listStyle?: List.Style;
+  className?: string;
+}
+
+const { type = 'unordered', listStyle = 'disc', className = '' } = Astro.props;
+
+const ListTag = type === 'unordered' ? 'ul' : 'ol';
+---
+
+<ListTag class={className} data-list-element="list" data-list-style={listStyle}>
+  <slot />
+</ListTag>

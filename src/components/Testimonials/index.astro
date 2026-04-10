@@ -1,4 +1,5 @@
 ---
+import Heading from '../Typography/Heading.astro';
 import testimonials from './testimonials.json';
 const row1 = testimonials.slice(0, 5);
 const row2 = testimonials.slice(5, 10);
@@ -8,7 +9,7 @@ const stars = "★★★★★";
 
 <section class="w-full py-24 overflow-hidden flex flex-col gap-8">
   <div class="px-8 md:px-32 mb-4">
-    <h2 class="text-2xl md:text-3xl">Atletas que confian en mi trabajo</h2>
+    <Heading level="2" className="text-2xl md:text-3xl uppercase italic text-white">Atletas que confian en mi trabajo</Heading>
   </div>
 
   <!-- Row 1: slides right (left-to-right visual motion) -->

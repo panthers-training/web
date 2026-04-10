@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import List from './List/index.astro';
+import ListItem from './ListItem/index.astro';
 
 interface Props {
 	navigationLinks?: Array<{ label: string; href: string; hidden?: boolean; className?: string; }>;
@@ -16,10 +18,10 @@ const { navigationLinks = [] } = Astro.props;
 	<!-- Desktop nav links (lg+) -->
 	<div class="text-white py-4 hidden lg:flex justify-between">
 		<div class="gap-8">
-			<ul class="flex items-center gap-x-2">
+			<List className="flex items-center gap-x-2" listStyle='none'>
 				{
 					navigationLinks.map((link) => (
-						<li>
+						<ListItem>
 							<a
 								href={link.href}
 								class={`nav-link relative p-4 text-sm font-medium text-white transition-colors duration-200 rounded-full hover:text-accent ${link.className ?? ''}`}
@@ -27,15 +29,15 @@ const { navigationLinks = [] } = Astro.props;
 								{link.label}
 							<span class="nav-link-underline absolute bottom-0 left-0 right-0 h-0.5 bg-linear-to-r from-accent to-accent scale-x-0 transition-transform duration-300"></span>
 							</a>
-						</li>
+						</ListItem>
 					))
 				}
-			</ul>
+			</List>
 		</div>
 	</div>
 
 	<!-- Mobile hamburger button (below lg) -->
-	<button id="mobile-menu-toggle" class="flex lg:hidden text-white p-2" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+	<button id="mobile-menu-toggle" class="flex lg:hidden text-white p-2 cursor-pointer" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
 		<Icon name="solar:hamburger-menu-outline" class="size-8" />
 	</button>
 </nav>
@@ -46,24 +48,24 @@ const { navigationLinks = [] } = Astro.props;
 	class="fixed inset-0 bg-black z-60 flex flex-col items-center justify-center lg:hidden translate-x-full transition-transform duration-300 ease-in-out"
 	aria-hidden="true"
 >
-	<button id="mobile-menu-close" class="absolute top-6 right-8 text-white p-2" aria-label="Close menu">
+	<button id="mobile-menu-close" class="absolute top-6 right-8 text-white p-2 cursor-pointer" aria-label="Close menu">
 		<Icon name="solar:close-circle-bold" class="size-8" />
 	</button>
 
-	<ul class="flex flex-col items-center gap-y-10">
+	<List className="flex flex-col items-center gap-y-10">
 		{
 			navigationLinks.map((link) => (
-				<li>
+				<ListItem>
 					<a
 						href={link.href}
 						class={`mobile-nav-link text-white text-2xl font-medium hover:text-accent transition-colors duration-200 ${link.className ?? ''}`}
 					>
 						{link.label}
 					</a>
-				</li>
+				</ListItem>
 			))
 		}
-	</ul>
+	</List>
 </div>
 
 <script define:vars={{ isHomePage }}>
