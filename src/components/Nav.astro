@@ -6,7 +6,8 @@ import ListItem from './ListItem/index.astro';
 interface Props {
 	navigationLinks?: Array<{ label: string; href: string; hidden?: boolean; className?: string; }>;
 }
-const isHomePage = Astro.url.pathname === '/';
+const homePathname = `${import.meta.env.PUBLIC_PATH_URL}/`;
+const isHomePage = Astro.url.pathname === homePathname;
 const { navigationLinks = [] } = Astro.props;
 ---
 

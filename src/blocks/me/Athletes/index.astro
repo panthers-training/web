@@ -9,7 +9,7 @@ import Heading from '../../../components/Typography/Heading.astro';
   <Heading level="2" className="italic uppercase flex flex-col gap-y-4 text-center text-white">
     Algunos de los atletas que han confiado en mí
   </Heading>
-  <List className="grid grid-cols-1 md:grid-cols-3 gap-8">
+  <List className="grid grid-cols-1 md:grid-cols-3 gap-8" nonBulleted>
     <li class="cursor-pointer basis-full md:basis-1/4 shrink-0 flex gap-x-4 overflow-hidden text-white rounded-md border border-white/10 text-xl group">
       <figure class="relative flex flex-col items-center">
         <img src={import.meta.env.PUBLIC_PATH_URL + "/yeomans.jpg"} alt="Athlete 1" class="rounded-t-md w-full h-full object-cover transition-transform group-hover:scale-105 relative z-10"/>

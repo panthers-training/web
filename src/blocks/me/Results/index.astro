@@ -2,8 +2,6 @@
 import { Icon } from 'astro-icon/components';
 import Section from '../../../components/Section/index.astro';
 import Heading from '../../../components/Typography/Heading.astro';
-import List from '../../../components/List/index.astro';
-import ListItem from '../../../components/ListItem/index.astro';
 ---
 
 <Section containerClassName="text-xl xl:text-3xl flex flex-col gap-y-16 grow h-full" className="flex items-center py-40!">
@@ -11,49 +9,90 @@ import ListItem from '../../../components/ListItem/index.astro';
     Mis resultados
   </Heading>
   <p class="text-center">Mi trayectoria se respalda en resultados comprobables en diferentes áreas</p>
-  <List className="flex flex-col max-w-xl mx-auto w-full">
-    <ListItem className="flex gap-x-6">
-      <div class="flex flex-col items-center shrink-0">
-        <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
-          <Icon name="lets-icons:speed-alt-light" class="size-8"/>
-        </span>
-        <div class="w-px flex-1 bg-white/20 my-2"></div>
-      </div>
-      <p class="text-white text-xl pb-8">
-        Transformaciones corporales en lapsos cortos de tiempo.
+
+  <div class="flex flex-wrap flex-col sm:flex-row gap-6 mx-auto w-full">
+
+    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#0074D9] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+      <!-- <span class="bg-white/20 rounded-full p-3 shrink-0 text-white">
+        <Icon name="lets-icons:speed-alt-light" class="size-8"/>
+      </span> -->
+      <p class="text-white text-xl uppercase italic">
+        Lapsos cortos
       </p>
-    </ListItem>
-    <ListItem className="flex gap-x-6">
-      <div class="flex flex-col items-center shrink-0">
-        <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
-          <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
-        </span>
-        <div class="w-px flex-1 bg-white/20 my-2"></div>
-      </div>
-      <p class="text-white text-xl pb-8">
-        Preparación de deportistas que han competido en escenarios mundiales y olímpicos.
+    </div>
+
+    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#FF4136] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+      <!-- <span class="bg-white/20 rounded-full p-3 shrink-0 text-white">
+        <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
+      </span> -->
+      <p class="text-white text-xl uppercase italic">
+        Preparación de clase olímpica y mundial
       </p>
-    </ListItem>
-    <ListItem className="flex gap-x-6">
-      <div class="flex flex-col items-center shrink-0">
-        <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
-          <Icon name="lets-icons:group-light" class="size-8"/>
-        </span>
-        <div class="w-px flex-1 bg-white/20 my-2"></div>
-      </div>
-      <p class="text-white text-xl pb-8">
-        Procesos de rehabilitación post lesión en conjunto con médicos especialistas, logrando una reincorporación segura al deporte.
+    </div>
+
+    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#FFDC00] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+      <!-- <span class="bg-black/10 rounded-full p-3 shrink-0 text-gray-900">
+        <Icon name="lets-icons:group-light" class="size-8"/>
+      </span> -->
+      <p class="text-white text-xl uppercase italic">
+        Rehabilitación deportiva
       </p>
-    </ListItem>
-    <ListItem className="flex gap-x-6">
-      <div class="flex flex-col items-center shrink-0">
-        <span class="bg-white/5 border border-white/20 rounded-full p-3 text-accent">
-          <Icon name="lets-icons:favorite-light" class="size-8"/>
-        </span>
-      </div>
-      <p class="text-white text-xl">
-        Rehabilitación post cirugía cardíaca en colaboración con cardiólogos, priorizando la salud y recuperación funcional del paciente.
+    </div>
+
+    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#2ECC40] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+      <!-- <span class="bg-black/10 rounded-full p-3 shrink-0 text-gray-900">
+        <Icon name="lets-icons:favorite-light" class="size-8"/>
+      </span> -->
+      <p class="text-white text-xl uppercase italic">
+        Testimonios reales
+        <!-- Testimonios de rehabilitación post cirugía cardíaca en colaboración con cardiólogos. -->
       </p>
-    </ListItem>
-  </List>
+    </div>
+
+  </div>
 </Section>
+
+<style>
+  .result-card {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease;
+  }
+
+  .result-card:hover {
+    transform: translateY(-2px);
+  }
+
+  .result-card::before,
+  .result-card::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    height: 300%;
+    transform: rotate(30deg);
+    transition: left 0.55s ease;
+    pointer-events: none;
+    z-index: 1;
+  }
+
+  .result-card::before {
+    left: -90%;
+    width: 36px;
+    background: rgba(255, 255, 255, 0.28);
+  }
+
+  .result-card::after {
+    left: -70%;
+    width: 18px;
+    background: rgba(255, 255, 255, 0.18);
+    transition-delay: 0.07s;
+  }
+
+  .result-card:hover::before {
+    left: 140%;
+  }
+
+  .result-card:hover::after {
+    left: 160%;
+  }
+</style>

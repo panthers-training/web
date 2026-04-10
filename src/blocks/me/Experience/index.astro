@@ -1,4 +1,5 @@
 ---
+import './index.css';
 import List from '../../../components/List/index.astro';
 import Section from '../../../components/Section/index.astro';
 import ListItem from '../../../components/ListItem/index.astro';
@@ -10,16 +11,16 @@ import Heading from '../../../components/Typography/Heading.astro';
     Mi experiencia
   </Heading>
   <div class="flex flex-col gap-y-8 text-white">
-    <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h3 class="text-accent">Formación académica</h3>
+    <div class="flex flex-col gap-y-8 p-8 rounded-lg " data-element="experience-list-academic">
+      <h3 class="text-accent z-10">Formación académica</h3>
       <List className="flex flex-col gap-4">
         <ListItem>Lic. En Actividad Física y Deportes por UABC Mexicali.</ListItem>
         <ListItem>Maestría en Medicina Deportiva "ESNECA" BUSINESS SCHOOL LATINOAMÉRICA.</ListItem>
       </List>
     </div>
 
-    <div class="flex flex-col gap-y-8 border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h3 class="text-accent">Certificados</h3>
+    <div class="flex flex-col gap-y-8 p-8 rounded-lg " data-element="experience-list-certificates">
+      <h3 class="text-accent z-10">Certificados</h3>
       <List className="flex flex-col xl:flex-row flex-wrap gap-2">
         <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Fundamentos básicos en biomecánica.</ListItem>
         <ListItem className="basis-full xl:basis-1/3 shrink-0 grow">Federación nacional de Fútbol FIFA</ListItem>
@@ -33,8 +34,8 @@ import Heading from '../../../components/Typography/Heading.astro';
     </div>
   </div>
   <div class="flex flex-col xl:flex-row gap-8">
-    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h4>Preparador fisico en:</h4>
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow p-8 rounded-lg " data-element="experience-list-preparator">
+      <h4 class="z-10">Preparador fisico en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
         <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
           <ListItem>Selección U13 soccer USA (2019)</ListItem>
@@ -48,8 +49,8 @@ import Heading from '../../../components/Typography/Heading.astro';
     </div>
 
 
-    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h4>Asesor en:</h4>
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow p-8 rounded-lg " data-element="experience-list-advisor">
+      <h4 class="z-10">Asesor en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
         <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
           <ListItem>Materia de estancia como estudiante de Estructura clásica (Entrenamiento UABC Deportes 2022)</ListItem>
@@ -58,8 +59,8 @@ import Heading from '../../../components/Typography/Heading.astro';
       </div>
     </div>
 
-    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h4>Entrenador en:</h4>
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow p-8 rounded-lg " data-element="experience-list-trainer">
+      <h4 class="z-10">Entrenador en:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
         <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
           <ListItem>TRX (2018-2019)</ListItem>
@@ -71,8 +72,8 @@ import Heading from '../../../components/Typography/Heading.astro';
       </div>
     </div>
 
-    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow border border-white/5 p-8 rounded-lg shadow shadow-white/10">
-      <h4>Otros:</h4>
+    <div class="flex flex-col gap-y-4 basis-full md:basis-1/4 xl:basis-1/5 gap-8 shrink-0 grow p-8 rounded-lg " data-element="experience-list-others">
+      <h4 class="z-10">Otros:</h4>
       <div class="basis-full md:basis-1/4 text-white flex flex-col gap-y-4">
         <List className="list-disc text-xl xl:text-2xl flex flex-col gap-y-1">
           <ListItem>Ganador de primer lugar en "Formula-ción de proyectos deportivos" (UABC Deportes 2022)</ListItem>

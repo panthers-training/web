@@ -16,22 +16,21 @@ const hasMultipleRows = rows.length >= 2;
 ---
 
 <section class="w-full px-8 md:px-32 py-32 flex flex-col gap-6">
-  <Heading level="2" className="text-2xl md:text-3xl uppercase italic text-white">Instituciones que han trabajado conmigo</Heading>
+  <Heading level="2" className="text-2xl md:text-3xl uppercase italic text-white text-center">Instituciones que han trabajado conmigo</Heading>
   {rows.map((row, rowIndex) => {
     const isLastRow = rowIndex === rows.length - 1;
     const isPartial = row.length < itemsPerRow;
     const centered = hasMultipleRows && isLastRow && isPartial;
-    const isOffsetRow = rowIndex % 2 !== 0;
     return (
-      <div class={`flex flex-wrap gap-6 ${centered ? 'justify-center' : ''} ${isOffsetRow ? 'xl:ml-24' : ''}`}>
+      <div class={`flex flex-wrap gap-6 justify-center`}>
         {row.map((image) => (
-          <div class="flex-none w-[calc(33.333%-1rem)]">
+          <figure class="flex-none basis-1/4 shrink-0 grow max-h-100 max-w-70">
             <img
               src={image.src}
               alt={image.alt}
-              class="w-full aspect-square object-cover rounded-full"
+              class="w-full aspect-square object-cover rounded-2xl h-full"
             />
-          </div>
+          </figure>
         ))}
       </div>
     );

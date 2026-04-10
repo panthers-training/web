@@ -1,4 +1,32 @@
-[data-element="experience-list"] li {
+[data-element="experience-list-academic"],
+[data-element="experience-list-certificates"],
+[data-element="experience-list-preparator"],
+[data-element="experience-list-advisor"],
+[data-element="experience-list-trainer"],
+[data-element="experience-list-others"] {
     position: relative;
-    left: 1rem;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+[data-element="experience-list-academic"]::before,
+[data-element="experience-list-certificates"]::before,
+[data-element="experience-list-preparator"]::before,
+[data-element="experience-list-advisor"]::before,
+[data-element="experience-list-trainer"]::before,
+[data-element="experience-list-others"]::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 0;
+}
+
+[data-element="experience-list-academic"] {
+    background-image: url('./lafyd.jpg');
+}
+
+[data-element="experience-list-certificates"] {
+    background-image: url('./lafyd_2.jpg');
 }

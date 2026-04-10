@@ -8,12 +8,22 @@ import Heading from '../../../components/Typography/Heading.astro';
   <Heading level="2" className="italic uppercase flex flex-col gap-y-4 text-white">
     Tu entrenador
   </Heading>
-  <p class="flex flex-col gap-y-8">
-    <span>
-      Soy Carlos Ramírez.
-    </span>
-    <span class="text-white">
-      Preparador físico especializado en alto rendimiento, medicina deportiva enfocado en llevar a cada atleta o persona a su máximo potencial físico, ya sea en el ámbito competitivo, salud o estética.
-    </span>
-  </p>
+  <div class="flex flex-col-reverse md:flex-row gap-8 justify-center xl:justify-between">
+    <p class="flex flex-col md:hidden xl:flex gap-y-8 justify-center" class="basis-full lg:basis-1/2 shrink-0 grow">
+      <span class="text-accent italic max-w-5xl">
+        Preparador físico especializado en alto rendimiento, medicina deportiva enfocado en llevar a cada atleta o persona a su máximo potencial físico, ya sea en el ámbito competitivo, salud o estética.
+      </span>
+    </p>
+    <figure class="basis-full lg:basis-1/2 shrink-0 grow relative overflow-hidden rounded-2xl group max-h-150 max-w-188">
+      <img class="w-full h-full object-cover rounded-2xl transition-transform scale-105 group-hover:scale-110" src={import.meta.env.PUBLIC_PATH_URL + '/winner_carlos.png'} alt="Carlos Ramírez" />
+      <figcaption class="flex-col gap-4 text-xl rounded-b-2xl text-white absolute bottom-0 bg-linear-0 from-black to-transparent w-full p-4 overflow-hidden">
+          <span class="text-2xl md:text-5xl text-end md:text-start px-4 uppercase">
+            Carlos Ramirez
+          </span>
+          <span class="text-accent italic text-end px-4 hidden md:flex xl:hidden">
+            Preparador físico especializado en alto rendimiento, medicina deportiva enfocado en llevar a cada atleta o persona a su máximo potencial físico, ya sea en el ámbito competitivo, salud o estética.
+          </span>
+      </figcaption>
+    </figure>
+  </div>
 </Section>

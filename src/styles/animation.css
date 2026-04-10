@@ -1,0 +1,41 @@
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-skew {
+  0% {
+    transform: translateY(0) skew(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) skew(-3deg);
+  }
+  100% {
+    transform: translateY(0) skew(-3deg);
+  }
+}
+
+@keyframes float-scale-skew {
+  0% {
+    transform: translateY(0) scale(1) skew(-3deg);
+  }
+  50% {
+    transform: translateY(-10px) scale(1.05) skew(-3deg);
+  }
+  100% {
+    transform: translateY(0) scale(1) skew(-3deg);
+  }
+}
