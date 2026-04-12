@@ -8,6 +8,10 @@
   left: 0;
 }
 
+[data-list-item-marker-accent] > li {
+  @apply text-accent;
+}
+
 [data-list-style="disc"] {
   @apply list-disc;
 }

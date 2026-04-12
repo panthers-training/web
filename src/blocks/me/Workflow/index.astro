@@ -1,0 +1,19 @@
+---
+import { Icon } from 'astro-icon/components';
+import Section from '../../../components/Section/index.astro';
+import Heading from '../../../components/Typography/Heading.astro';
+import List from '../../../components/List/index.astro';
+import ListItem from '../../../components/ListItem/index.astro';
+---
+
+<Section>
+  <Heading level="2" className='text-2xl md:text-3xl uppercase italic text-white'>Como trabajaremos juntos</Heading>
+  <Heading level="3" className='text-xl'>Cada proceso es 100% personalizado y basado en:</Heading>
+  <List type='unordered' className='text-white'>
+    <ListItem>Evaluación física inicial detallada</ListItem>
+    <ListItem>Objetivos específicos del cliente/atleta</ListItem>
+    <ListItem>Periodización del entrenamiento</ListItem>
+    <ListItem>Control y seguimiento constante</ListItem>
+    <ListItem>Ajustes estratégicos en tiempo real</ListItem>
+  </List>
+</Section>

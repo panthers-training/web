@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@floating-ui/dom": "1.7.6",
     "@iconify-json/lets-icons": "1.2.2",
     "@iconify-json/simple-icons": "1.2.76",
     "@iconify-json/solar": "1.2.5",
