@@ -11,10 +11,9 @@ import { Icon } from 'astro-icon/components';
   <Heading level="2" className="z-10 italic uppercase flex flex-col gap-y-4 text-white border-b border-b-white/10 pb-8 xl:pb-16">
     Mi perfil
   </Heading>
-  <div class="flex flex-col 2xl:flex-row gap-4 xl:gap-8 xl:justify-between">
-
+  <div class="academic-layout gap-4 xl:gap-8 xl:justify-between">
+    <Heading level='3' className='uppercase w-full row-auto'>Formación Académica</Heading>
     <div class="flex flex-wrap gap-4 xl:gap-8 basis-full xl:basis-1/3 shrink-0 grow">
-      <Heading level='3' className='uppercase w-full h-min'>Formación Académica</Heading>
       <div class="basis-full md:basis-1/3 shrink-0 grow border border-white/5 p-4 rounded-xl bg-black flex flex-col gap-y-2">
         <div class="border rounded-full p-2 w-min">
           <Icon name="solar:square-academic-cap-linear" class="size-6"/>
@@ -30,9 +29,8 @@ import { Icon } from 'astro-icon/components';
         <span class="text-gray-400 text-sm">ESNECA Business School Latinoamérica.</span>
       </div>
     </div>
-
+    <Heading level='3' className='uppercase w-full row-auto'>Certificados</Heading>
     <div class="flex flex-wrap gap-4 xl:gap-8 basis-full xl:basis-1/3 shrink-0 grow">
-      <Heading level='3' className='uppercase'>Certificados</Heading>
       <List className="text-xl xl:text-2xl flex flex-wrap gap-4 items-stretch" nonBulleted listStyle="none">
         <ListItem className='flex gap-x-2 items-center text-sm border border-white/5 p-4 rounded-xl bg-black basis-full md:basis-1/3 xl:basis-1/5 shrink-0 grow cursor-pointer'>
           <Icon name="lets-icons:roll-alt-light-light" class="size-8 shrink-0 grow basis-1/6"/>
@@ -83,176 +81,163 @@ import { Icon } from 'astro-icon/components';
           </span>
         </ListItem>
       </List>
-    </div>
+  </div>
   </div>
 
   <div class="flex flex-col gap-8">
     <Heading level='3' className='uppercase'>Experiencia</Heading>
     <div class="flex flex-wrap gap-4 xl:gap-8">
-      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white">
-        <Heading level='4' className='border-b-2 border-accent italic'>Preparador físico</Heading>
+      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white gap-y-4">
+        <Heading level='4' className='border-b-2 border-accent italic pb-4'>Preparador físico</Heading>
         <List nonBulleted listStyle='none' className="text-xl xl:text-2xl flex flex-col gap-y-4">
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Selección U13 soccer USA (2019)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2019</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Selección U13 soccer USA
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de futbol Americano de Calexico CA (2019-2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2020</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Seleccionado de gimnasia Mexicali
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado de gimnasia Mexicali (2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2019-23</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Atletas de basquetbol S.L.R.C.
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado preolimpico de atletismo (2019-2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2019-20</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Seleccionado preolimpico de atletismo
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Director deportivo en Academia de soccer Fc. Panthers (2020-2022)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2019-20</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Atletas de futbol Americano de Calexico CA
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de basquetbol S.L.R.C. (2019-2023)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2020-22</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-xl">
+              Dir. dep. en Academia de soccer Fc. Panthers
             </span>
           </ListItem>
         </List>
       </div>
-      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white">
-        <Heading level='4' className='border-b-2 border-accent italic'>Entrenador</Heading>
+      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white gap-y-4">
+        <Heading level='4' className='border-b-2 border-accent italic pb-4'>Entrenador</Heading>
         <List nonBulleted listStyle='none' className="text-xl xl:text-2xl flex flex-col gap-y-4">
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Selección U13 soccer USA (2019)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2018-19</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              TRX
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de futbol Americano de Calexico CA (2019-2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2023</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              MMA Profesional en campamentos
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado de gimnasia Mexicali (2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2020-22</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Área geriátrica
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado preolimpico de atletismo (2019-2020)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Director deportivo en Academia de soccer Fc. Panthers (2020-2022)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de basquetbol S.L.R.C. (2019-2023)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2019-21</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Formaciones de entrenamiento para la salud
             </span>
           </ListItem>
         </List>
       </div>
-      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white">
-        <Heading level='4' className='border-b-2 border-accent italic'>Asesor</Heading>
+      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white gap-y-4">
+        <Heading level='4' className='border-b-2 border-accent italic pb-4'>Asesor</Heading>
         <List nonBulleted listStyle='none' className="text-xl xl:text-2xl flex flex-col gap-y-4">
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Selección U13 soccer USA (2019)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2022</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Materia de estancia como estudiante de Estructura clásica (Entrenamiento UABC Deportes)
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de futbol Americano de Calexico CA (2019-2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2022</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Materia de entrenamiento geriátrico (UABC Deportes)
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado de gimnasia Mexicali (2020)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado preolimpico de atletismo (2019-2020)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Director deportivo en Academia de soccer Fc. Panthers (2020-2022)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de basquetbol S.L.R.C. (2019-2023)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2023</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Entrenamiento "Campesinos sin Frontera EEUU" para la diabetes
             </span>
           </ListItem>
         </List>
       </div>
-      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white">
-        <Heading level='4' className='border-b-2 border-accent italic'>Otros</Heading>
+      <div class="pt-4 xl:pt-8 flex flex-col shrink-0 grow basis-full md:basis-1/3 xl:basis-1/5 text-white gap-y-4">
+        <Heading level='4' className='border-b-2 border-accent italic pb-4'>Otros</Heading>
         <List nonBulleted listStyle='none' className="text-xl xl:text-2xl flex flex-col gap-y-4">
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Selección U13 soccer USA (2019)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">Presente</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Estancia en el área de fisiología del deporte
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de futbol Americano de Calexico CA (2019-2020)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2023</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Colaborador en Expo de Empleos (UABC Deportes)
             </span>
           </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado de gimnasia Mexicali (2020)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Seleccionado preolimpico de atletismo (2019-2020)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Director deportivo en Academia de soccer Fc. Panthers (2020-2022)
-            </span>
-          </ListItem>
-          <ListItem className='flex gap-x-2'>
-            <span class="text-accent text-xl">2019</span>
-            <span class="text-lg md:text-xl">
-              Atletas de basquetbol S.L.R.C. (2019-2023)
+          <ListItem className='flex flex-wrap gap-x-2'>
+            <span class="basis-full sm:basis-auto text-accent text-lg shrink-0">2022-presente</span>
+            <span class="basis-full sm:basis-auto text-lg md:text-lg">
+              Evaluador físico de atletas de deportes
             </span>
           </ListItem>
         </List>
       </div>
     </div>
   </div>
+  <div class="flex flex-wrap basis-full xl:basis-1/3 shrink-0 grow gap-4 xl:gap-8">
+      <Heading level='3' className='uppercase w-full h-min'>Logros destacados</Heading>
+      <List nonBulleted listStyle='none' className="text-xl xl:text-2xl flex flex-col gap-y-4 border border-white/5 p-4 xl:p-8 basis-full xl:basis-1/2 rounded-xl bg-black">
+        <ListItem className='flex gap-x-2 items-center'>
+          <span class="font-serif text-2xl">
+            2022
+          </span>
+          <span class="text-white text-lg xl:text-xl pt-1">Ganador de primer lugar en "Formulación de proyectos deportivos" (UABC Deportes)</span>
+        </ListItem>
+        <ListItem className='flex gap-x-2 items-center'>
+          <span class="font-serif text-2xl">
+            2024
+          </span>
+          <span class="text-white text-lg xl:text-xl pt-1">Preparador físico de fisicoculturismo para campeón de Baja California y 5to lugar nacional</span>
+        </ListItem>
+      </List>
+  </div>
 </Section>
+
+<style>
+  .academic-layout {
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+    grid-template-columns: 1fr;
+    grid-auto-flow: row;
+  }
+
+  @media (min-width: 1920px) {
+    .academic-layout {
+      display: grid;
+      grid-template-rows: repeat(2, min-content);
+      grid-template-columns: repeat(2, 1fr);
+      grid-auto-flow: column;
+    }
+  }
+</style>
