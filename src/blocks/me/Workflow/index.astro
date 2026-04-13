@@ -6,14 +6,118 @@ import List from '../../../components/List/index.astro';
 import ListItem from '../../../components/ListItem/index.astro';
 ---
 
-<Section>
-  <Heading level="2" className='text-2xl md:text-3xl uppercase italic text-white'>Como trabajaremos juntos</Heading>
-  <Heading level="3" className='text-xl'>Cada proceso es 100% personalizado y basado en:</Heading>
-  <List type='unordered' className='text-white'>
-    <ListItem>Evaluación física inicial detallada</ListItem>
-    <ListItem>Objetivos específicos del cliente/atleta</ListItem>
-    <ListItem>Periodización del entrenamiento</ListItem>
-    <ListItem>Control y seguimiento constante</ListItem>
-    <ListItem>Ajustes estratégicos en tiempo real</ListItem>
+<Section containerClassName='flex flex-col gap-4 xl:gap-8'>
+  <Heading level="2" className='text-2xl md:text-3xl uppercase italic text-white max-w-5xl'>
+    Como trabajaremos <span class="text-accent">juntos</span>
+  </Heading>
+  <Heading level="3" className='text-xl'>Cada proceso es 100% personalizado</Heading>
+  <List type='unordered' nonBulleted listStyle='none' className='text-white overflow-hidden border border-white/5 bg-black/15 rounded-xl p-4 xl:p-8 gap-4 xl:gap-8 workflow-grid'>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        01
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Evaluación física inicial
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        Diagnóstico detallado de tu condición actual, historial y limitaciones.
+      </p>
+    </ListItem>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        02
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Definición de objetivos
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        Metas específicas, medibles y alcanzables según tu perfil como cliente o atleta.
+      </p>
+    </ListItem>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        03
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Periodización del entrenamiento
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        Plan estructurado por fases que distribuye cargas y recuperación inteligentemente.
+      </p>
+    </ListItem>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        04
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Control y seguimiento
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        Monitoreo constante de indicadores clave de rendimiento y bienestar.
+      </p>
+    </ListItem>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        05
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Ajustes en tiempo real
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        Correcciones estratégicas basadas en datos y en cómo responde tu cuerpo.
+      </p>
+    </ListItem>
+    <ListItem className='flex flex-col shrink-0 grow'>
+      <span class="text-3xl italic">
+        06
+      </span>
+      <Heading level='4' className='text-lg xl:text-xl text-accent italic'>
+        Proceso continuo
+      </Heading>
+      <p class="text-sm xl:text-lg">
+        El entrenamiento evoluciona contigo. Nunca dos ciclos son iguales.
+      </p>
+    </ListItem>
   </List>
+  <div class="flex flex-col lg:flex-row text-lg xl:text-xl border-white/5 bg-black/15 rounded-xl p-4 xl:p-8 lg:items-center">
+    <span class="border rounded-full p-2 w-min border-accent">
+      <Icon name="solar:square-academic-cap-linear" class="size-6"/>
+    </span>
+    <p class="flex flex-col lg:flex-row gap-4 lg:gap-y-8 mt-4 lg:mt-0">
+      <span class="lg:ml-4 basis-full lg:basis-auto shrink">
+        Sin protocolos genéricos.
+      </span>
+      <span class="text-white basis-full lg:basis-auto shrink-0 grow">
+        Cada variable — carga, volumen, frecuencia, recuperación — se diseña específicamente para ti.
+      </span>
+    </p>
+  </div>
 </Section>
+
+<style>
+    :global(.workflow-grid) {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    @media screen and (min-width: 640px) {
+      :global(.workflow-grid) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      :global(.workflow-grid) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (min-width: 1920px) {
+      :global(.workflow-grid) {
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: 1fr;
+      }
+    }
+</style>
