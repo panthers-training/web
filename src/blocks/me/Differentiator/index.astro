@@ -1,0 +1,84 @@
+---
+import { Icon } from 'astro-icon/components';
+import Section from '../../../components/Section/index.astro';
+import Heading from '../../../components/Typography/Heading.astro';
+---
+
+<Section section="me-differentiator">
+  <Heading level="2" className="z-10 italic uppercase flex flex-col gap-y-4 text-white mb-8 xl:mb-16 xl:text-end">
+    Diferencial
+  </Heading>
+  <div class="rounded-2xl bg-white/5 border border-white/10 p-8 xl:p-12 mb-4">
+    <div class="flex flex-col xl:flex-row gap-8 xl:gap-0">
+      <div class="xl:w-1/2 xl:pr-12 flex flex-col gap-y-6">
+        <h2 class="text-2xl xl:text-3xl uppercase italic text-white leading-tight">
+          No solo es entrenamiento.<br/>
+          <span class="text-accent italic">Es un sistema.</span>
+        </h2>
+        <p class="text-white/50 italic text-lg leading-relaxed">
+          Cuatro dimensiones del rendimiento humano,<br/>
+          integradas en un solo proceso.
+        </p>
+      </div>
+      <div class="xl:w-1/2 xl:pl-12 xl:border-l-2 xl:border-accent/30 flex flex-col gap-y-8 justify-between">
+        <p class="text-white text-lg xl:text-xl leading-relaxed">
+          Un enfoque que me posiciona como una de las opciones <strong class="text-accent font-bold not-italic">más completas dentro del alto rendimiento</strong>, respaldado por formación profesional y colaboración directa con el cuerpo médico.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Four pillars grid -->
+  <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 rounded-2xl border border-white/10 bg-white/5 overflow-hidden mb-4">
+    <div class="p-8 xl:p-10 flex flex-col gap-y-6 border-b sm:border-r xl:border-b-0 border-white/10">
+      <span class="border border-white/20 rounded-full p-2 w-min text-accent bg-true-black">
+        <Icon name="solar:dumbbell-large-minimalistic-linear" class="size-5"/>
+      </span>
+      <div class="flex flex-col gap-y-2">
+        <h3 class="text-white font-bold">Preparación física</h3>
+        <p class="text-white/50 text-sm">Base estructural de fuerza, movilidad y acondicionamiento general.</p>
+      </div>
+    </div>
+    <div class="p-8 xl:p-10 flex flex-col gap-y-6 border-b xl:border-b-0 xl:border-r border-white/10">
+      <span class="border border-white/20 rounded-full p-2 w-min text-accent bg-true-black">
+        <Icon name="solar:meditation-linear" class="size-5"/>
+      </span>
+      <div class="flex flex-col gap-y-2">
+        <h3 class="text-white font-bold">Rehabilitación</h3>
+        <p class="text-white/50 text-sm">Recuperación funcional integrada al proceso, no separada de él.</p>
+      </div>
+    </div>
+    <div class="p-8 xl:p-10 flex flex-col gap-y-6 border-b sm:border-b-0 sm:border-r border-white/10">
+      <span class="border border-white/20 rounded-full p-2 w-min text-accent bg-true-black">
+        <Icon name="solar:running-round-outline" class="size-5"/>
+      </span>
+      <div class="flex flex-col gap-y-2">
+        <h3 class="text-white font-bold">Rendimiento deportivo</h3>
+        <p class="text-white/50 text-sm">Potenciación de capacidades específicas orientadas a la competencia.</p>
+      </div>
+    </div>
+    <div class="p-8 xl:p-10 flex flex-col gap-y-6">
+      <span class="border border-white/20 rounded-full p-2 w-min text-accent bg-true-black">
+        <Icon name="solar:health-outline" class="size-5"/>
+      </span>
+      <div class="flex flex-col gap-y-2">
+        <h3 class="text-white font-bold">Salud</h3>
+        <p class="text-white/50 text-sm">Bienestar a largo plazo como eje transversal de cada decisión de entrenamiento.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom info cards -->
+  <div class="grid grid-cols-1 xl:grid-cols-2 gap-4">
+    <div class="rounded-2xl bg-white/5 border border-white/10 p-8 xl:p-10 flex gap-x-6 items-start">
+      <p class="text-white/60 text-base xl:text-lg leading-relaxed">
+        <strong class="text-white font-bold">Integración real.</strong> Los cuatro pilares se influyen mutuamente — una lesión informa el plan de rendimiento, y la salud guía la carga de trabajo.
+      </p>
+    </div>
+    <div class="rounded-2xl bg-white/5 border border-white/10 p-8 xl:p-10 flex gap-x-6 items-start">
+      <p class="text-white/60 text-base xl:text-lg leading-relaxed">
+        <strong class="text-white font-bold">Respaldo médico.</strong> La colaboración directa con el cuerpo médico permite tomar decisiones informadas en los límites entre entrenamiento, riesgo, impacto y salud.
+      </p>
+    </div>
+  </div>
+</Section>

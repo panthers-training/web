@@ -1,0 +1,33 @@
+---
+import Section from '../../../components/Section/index.astro';
+---
+
+<Section section="me-cta">
+  <div class="relative rounded-2xl bg-white/5 border border-white/10 overflow-hidden p-8 xl:p-16">
+    <!-- Decorative radial glow -->
+    <div class="hidden xl:block absolute right-0 top-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none"></div>
+    <div class="hidden xl:block absolute right-16 top-1/2 -translate-y-1/2 w-64 h-64 rounded-full border border-white/5 pointer-events-none"></div>
+    <div class="hidden xl:block absolute right-32 top-1/2 -translate-y-1/2 w-40 h-40 rounded-full border border-white/5 pointer-events-none"></div>
+
+    <div class="relative flex flex-col xl:flex-row xl:items-center gap-10 xl:gap-24">
+      <!-- Left: copy -->
+      <div class="flex flex-col gap-y-5 xl:flex-1">
+        <h2 class="text-4xl xl:text-5xl 2xl:text-6xl text-white leading-tight uppercase">
+          Lleva tu físico<br/>
+          al <span class="text-accent italic">siguiente nivel</span>
+        </h2>
+        <p class="text-white/50 italic text-lg leading-relaxed max-w-md flex flex-col">
+          <span>Comienza una nueva etapa.</span>
+          <span>100% personalizada desde el primer día.</span>
+        </p>
+      </div>
+
+      <!-- Right: actions -->
+      <div class="flex flex-col items-start xl:items-center gap-y-4 shrink-0">
+        <a href="#contact" class="bg-accent text-black font-bold text-base xl:text-lg px-8 py-4 rounded transition-opacity duration-150 hover:opacity-90 whitespace-nowrap">
+          Agendar evaluación
+        </a>
+      </div>
+    </div>
+  </div>
+</Section>
