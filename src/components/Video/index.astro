@@ -1,26 +1,50 @@
 ---
+import crypto from 'crypto';
 interface Props {
+  id?: string;
   src: string;
   class?: string;
   containerClass?: string;
   inline?: boolean;
   setup?: Record<string, any>;
   minimal?: boolean;
+  type?: string;
 }
 
-const { src, class: className, containerClass = "w-full h-full", setup = {}, minimal = false, inline = false } = Astro.props;
+const { id = crypto.randomUUID(), src, class: className, containerClass = "w-full h-full", setup = {}, minimal = false, inline = false } = Astro.props;
 ---
 
 <script type="module" src="https://cdn.jsdelivr.net/npm/@videojs/html/cdn/video-minimal.js"></script>
 
-<video-player>
-  <media-container class={containerClass}>
-    {
-      minimal &&
-      <video-minimal-skin>
-        <video class={`${className}`} src={src} playsinline={inline} {...setup}/>
-      </video-minimal-skin>
-    }
-    {!minimal && <video class={`${className}`} src={src} playsinline={inline} {...setup} />}
-  </media-container>
-</video-player>
+<div>
+  <video-player>
+    <media-container class={containerClass}>
+      {
+        minimal &&
+        <video-minimal-skin>
+          <video id={id} class={`${className}`} playsinline={inline} {...setup}>
+            <source src={`${src}.webm`} type="video/webm" />
+            <source src={`${src}.mp4`} type="video/mp4" />
+          </video>
+        </video-minimal-skin>
+      }
+      {!minimal && <video id={id} class={`${className}`} playsinline={inline} {...setup}>
+        <source src={`${src}.webm`} type="video/webm" />
+        <source src={`${src}.mp4`} type="video/mp4" />
+      </video>}
+    </media-container>
+  </video-player>
+</div>
+
+
+<script define:vars={{ id }}>
+  const video = document.getElementById(id);
+  if (video) {
+    const muted = video.getAttribute('muted');
+    video.addEventListener('canplay', (e) => {
+      e.target.muted = muted !== null;
+    });
+  } else {
+    console.error('Video element not found with id:', Astro.props.id);
+  }
+</script>
