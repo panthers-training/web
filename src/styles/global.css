@@ -142,7 +142,6 @@
   --animate-float: float 3s ease-in-out infinite;
   --animate-float-skew: float-skew 2s ease-in-out infinite;
   --animate-float-scale-skew: float-scale-skew 2s ease-in-out infinite;
-
 }
 
 html, body {

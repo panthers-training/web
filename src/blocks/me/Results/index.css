@@ -1,0 +1,21 @@
+[data-result-card] {
+  background-repeat: no-repeat;
+  background-size:  cover;
+  position: relative;
+}
+
+[data-result-card="1"] {
+  background-image: url('/result-1.png');
+}
+
+[data-result-card="2"] {
+  background-image: url('/result-2.jpeg');
+}
+
+[data-result-card="3"] {
+  background-image: url('/result-3.png');
+}
+
+[data-result-card="4"] {
+  background-image: url('/result-4.jpg');
+}

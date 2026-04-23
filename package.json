@@ -12,14 +12,20 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/react": "5.0.3",
     "@floating-ui/dom": "1.7.6",
+    "@headlessui/react": "2.2.10",
     "@iconify-json/lets-icons": "1.2.2",
     "@iconify-json/simple-icons": "1.2.76",
     "@iconify-json/solar": "1.2.5",
     "@tailwindcss/vite": "^4.2.2",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
     "astro": "^6.1.2",
     "astro-icon": "1.1.5",
     "classnames": "^2.5.1",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
     "tailwindcss": "^4.2.2"
   }
 }

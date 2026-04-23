@@ -2,6 +2,7 @@
 import { defineConfig } from 'astro/config';
 import icon from "astro-icon";
 import tailwindcss from '@tailwindcss/vite';
+import react from '@astrojs/react';
 
 import { loadEnv } from "vite";
 const { SITE_URL, PUBLIC_PATH_URL } = loadEnv(process.env.NODE_ENV ?? 'development', process.cwd(), "");
@@ -13,7 +14,7 @@ export default defineConfig({
   server: {
     port: 3000,
   },
-  integrations: [icon()],
+  integrations: [icon(), react()],
   vite: {
     plugins: [tailwindcss()]
   }

@@ -1,4 +1,5 @@
 ---
+import './index.css';
 import { Icon } from 'astro-icon/components';
 import Section from '../../../components/Section/index.astro';
 import Heading from '../../../components/Typography/Heading.astro';
@@ -11,38 +12,42 @@ import Heading from '../../../components/Typography/Heading.astro';
   <p class="text-center">Mi trayectoria se respalda en resultados comprobables en diferentes áreas</p>
   <div class="flex flex-wrap flex-col sm:flex-row gap-6 mx-auto w-full">
 
-    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#0074D9] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+    <div data-result-card="1" class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow rounded-md p-6 flex gap-x-4 items-end min-h-150 relative z-0">
+      <div class="w-full min-h-150 absolute bg-linear-to-b from-transparent to-[#0074D9] z-10 top-0 left-0"></div>
       <!-- <span class="bg-white/20 rounded-full p-3 shrink-0 text-white">
         <Icon name="lets-icons:speed-alt-light" class="size-8"/>
       </span> -->
-      <p class="text-white text-xl uppercase italic">
+      <p class="text-white text-xl uppercase italic relative z-20">
         Lapsos cortos
       </p>
     </div>
 
-    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#FF4136] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+    <div data-result-card="2" class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow rounded-md p-6 flex gap-x-4 items-end min-h-150 relative z-0">
+      <div class="w-full min-h-150 absolute bg-linear-to-b from-transparent to-[#FF4136] z-10 top-0 left-0"></div>
       <!-- <span class="bg-white/20 rounded-full p-3 shrink-0 text-white">
         <Icon name="lets-icons:roll-alt-light-light" class="size-8"/>
       </span> -->
-      <p class="text-white text-xl uppercase italic">
+      <p class="text-white text-xl uppercase italic relative z-20">
         Preparación de clase olímpica y mundial
       </p>
     </div>
 
-    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#FFDC00] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+    <div data-result-card="3" class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow rounded-md p-6 flex gap-x-4 items-end min-h-150 relative z-0">
+      <div class="w-full min-h-150 absolute bg-linear-to-b from-transparent to-[#FFDC00] z-10 top-0 left-0"></div>
       <!-- <span class="bg-black/10 rounded-full p-3 shrink-0 text-gray-900">
         <Icon name="lets-icons:group-light" class="size-8"/>
       </span> -->
-      <p class="text-white text-xl uppercase italic">
+      <p class="text-black text-xl uppercase italic relative z-20">
         Rehabilitación deportiva
       </p>
     </div>
 
-    <div class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow bg-linear-to-t from-transparent to-[#2ECC40] rounded-md p-6 flex gap-x-4 items-end min-h-100">
+    <div data-result-card="4" class="result-card basis-1/3 lg:basis-1/5 shrink-0 grow rounded-md p-6 flex gap-x-4 items-end min-h-150 relative z-0">
+      <div class="w-full min-h-150 absolute bg-linear-to-b from-transparent to-[#2ECC40] z-10 top-0 left-0"></div>
       <!-- <span class="bg-black/10 rounded-full p-3 shrink-0 text-gray-900">
         <Icon name="lets-icons:favorite-light" class="size-8"/>
       </span> -->
-      <p class="text-white text-xl uppercase italic">
+      <p class="text-white text-xl uppercase italic relative z-20">
         Testimonios reales
         <!-- Testimonios de rehabilitación post cirugía cardíaca en colaboración con cardiólogos. -->
       </p>
@@ -60,38 +65,5 @@ import Heading from '../../../components/Typography/Heading.astro';
 
   .result-card:hover {
     transform: translateY(-2px);
-  }
-
-  .result-card::before,
-  .result-card::after {
-    content: '';
-    position: absolute;
-    top: -100%;
-    height: 300%;
-    transform: rotate(30deg);
-    transition: left 0.55s ease;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  .result-card::before {
-    left: -90%;
-    width: 36px;
-    background: rgba(255, 255, 255, 0.28);
-  }
-
-  .result-card::after {
-    left: -70%;
-    width: 18px;
-    background: rgba(255, 255, 255, 0.18);
-    transition-delay: 0.07s;
-  }
-
-  .result-card:hover::before {
-    left: 140%;
-  }
-
-  .result-card:hover::after {
-    left: 160%;
   }
 </style>
